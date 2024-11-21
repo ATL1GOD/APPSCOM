@@ -10,11 +10,12 @@ class Onboarding2Screen extends StatelessWidget{
 
 @override
   Widget build(BuildContext context) {
-    const String assetName = 'assets/svg/onboarding/undraw3.svg';
+    const String assetName = 'assets/svg/onboarding/undraw2.svg';
     final Widget svg = SvgPicture.asset(
       assetName,
-      semanticsLabel: '', // Etiqueta para describir la imagen
+      semanticsLabel: 'Profesionales', // Etiqueta para describir la imagen
     );
+
     return Scaffold(
       body: SafeArea(
         child: Center(
@@ -31,6 +32,7 @@ class Onboarding2Screen extends StatelessWidget{
                   child: svg,
                 ),
                 SizedBox(height: 2.h), // Separación entre SVG y texto
+
                 // T
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 12.0),
@@ -38,7 +40,7 @@ class Onboarding2Screen extends StatelessWidget{
                     TextSpan(
                       children: [
                         TextSpan(
-                          text: 'Estamos', //
+                          text: 'Contamos con', 
                           style: TextStyle(
                             fontSize: 18.sp,
                             fontWeight: FontWeight.normal,
@@ -46,7 +48,7 @@ class Onboarding2Screen extends StatelessWidget{
                           ),
                         ),
                         TextSpan(
-                          text: ' comprometidos\n', // 
+                          text: ' profesionales\n', // 
                           style: TextStyle(
                             fontSize: 19.sp,
                             fontWeight: FontWeight.bold,
@@ -54,7 +56,7 @@ class Onboarding2Screen extends StatelessWidget{
                           ),
                         ),
                         TextSpan(
-                          text: 'con tu', // 
+                          text: 'altamente', // 
                           style: TextStyle(
                             fontSize: 18.sp,
                             fontWeight: FontWeight.normal,
@@ -62,7 +64,7 @@ class Onboarding2Screen extends StatelessWidget{
                           ),
                         ),
                         TextSpan(
-                          text: ' educacion', // 
+                          text: ' calificados', // 
                           style: TextStyle(
                             fontSize: 19.sp,
                             fontWeight: FontWeight.bold,
@@ -70,7 +72,7 @@ class Onboarding2Screen extends StatelessWidget{
                           ),
                         ),
                         TextSpan(
-                          text: ' esperamos verte pronto', // 
+                          text: ' impartiendo clases', // 
                           style: TextStyle(
                             fontSize: 18.sp,
                             fontWeight: FontWeight.normal,
