@@ -38,7 +38,7 @@ class _ContenedorOnboardingScreenState
             ),
             // Controles de navegación
             Align(
-              alignment: const Alignment(0, 0.85),
+              alignment: const Alignment(0, 0.9),
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Row(
@@ -51,7 +51,7 @@ class _ContenedorOnboardingScreenState
                       },
                       child: const Text(
                         'Saltar',
-                        style: TextStyle(color: Colors.blue),
+                        style: TextStyle(color: Colors.blue, fontSize: 20),
                       ),
                     ),
                     // Indicador de progreso
@@ -80,7 +80,7 @@ class _ContenedorOnboardingScreenState
                       },
                       child: Text(
                         ultimaPagina ? 'Listo' : 'Siguiente',
-                        style: const TextStyle(color: Colors.blue),
+                        style: const TextStyle(color: Colors.blue, fontSize: 20),
                       ),
                     ),
                   ],
