@@ -67,7 +67,7 @@ var goRouter = GoRouter(
         ),
         GoRoute(
           path: MobileRoutes.pg9,
-          builder: (BuildContext context, GoRouterState state) => const EntryPoint(),
+          builder: (BuildContext context, GoRouterState state) => const Page9(),
         ),
         GoRoute(
           path: MobileRoutes.pg10,

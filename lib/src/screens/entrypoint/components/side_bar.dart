@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 
 import 'package:appscom/src/res/components/menu.dart';
 import '../../../utils/rive_utils.dart';
@@ -90,3 +90,4 @@ class _SideBarState extends State<SideBar> {
     );
   }
 }
+*/

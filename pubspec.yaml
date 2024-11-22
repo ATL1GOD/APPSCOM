@@ -13,6 +13,7 @@ dependencies:
   smooth_page_indicator: ^1.2.0+3
   avatar_glow: ^3.0.1
   sizer: ^3.0.5
+  carousel_slider: ^5.0.0
   animate_do: ^3.3.4
   rive: ^0.13.17
   cupertino_icons: ^1.0.8

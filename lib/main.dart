@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:appscom/src/res/colors.dart';
 import 'package:appscom/src/screens/onboarding/screens_onboarding.dart';
 import 'package:sizer/sizer.dart';
+import 'package:appscom/src/screens/entrypoint/entry_point.dart';
 
 void main() {
   runApp(
@@ -49,11 +50,12 @@ class App extends StatelessWidget {
         // Aquí se agregan las rutas de las pantallas de bienvenida
         initialRoute: OnboardingScreen.name, // Ruta inicial
         routes: {
-          OnboardingScreen.name               : (context) => const OnboardingScreen(),
+          OnboardingScreen.name                    : (context) => const OnboardingScreen(),
           Onboarding1Screen.routename              : (context) => const Onboarding1Screen(),
           Onboarding2Screen.routename              : (context) => const Onboarding2Screen(),
           Onboarding3Screen.routename              : (context) => const Onboarding3Screen(),
           ContenedorOnboardingScreen.routename     : (context) => const ContenedorOnboardingScreen(),
+          EntryPoint.routeName                     : (context) => const EntryPoint(),
         },  
         //home: const OnboardingScreen(), // Pantalla de bienvenida directamente
       );
