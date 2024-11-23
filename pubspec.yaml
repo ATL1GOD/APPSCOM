@@ -74,6 +74,7 @@ flutter:
     - assets/logo/
     - assets/rive/
     - assets/icons/
+    - assets/png/fotografias/
     # otras rutas de assets...
 
 

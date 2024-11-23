@@ -35,7 +35,7 @@ class _NewsCarouselSliderState extends State<NewsCarouselSlider> {
             child: Stack(
               children: <Widget>[
                 Image.network(
-                  item.imgUrl,
+                  item.imgPath,
                   fit: BoxFit.cover,
                   width: 1000.0,
                 ),

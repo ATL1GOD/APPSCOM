@@ -48,7 +48,7 @@ class _NewsDetailsAppBarState extends State<NewsDetailsAppBar> {
           children: [
             Positioned.fill(
               child: Image.network(
-                news[widget.index].imgUrl,
+                news[widget.index].imgPath,
                 fit: BoxFit.cover,
               ),
             ),
