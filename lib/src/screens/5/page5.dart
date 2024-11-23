@@ -6,17 +6,17 @@ class Page5 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+    final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
     return Scaffold(
-      key: _scaffoldKey,
+      key: scaffoldKey,
       appBar: AppBar(
         toolbarHeight: 80.h,
         leading: IconButton(
           icon: Icon(Icons.menu),
           onPressed: () {
             // Abre el Drawer cuando se presiona el menú
-            _scaffoldKey.currentState?.openDrawer();
+            scaffoldKey.currentState?.openDrawer();
           },
         ),
         title: Row(

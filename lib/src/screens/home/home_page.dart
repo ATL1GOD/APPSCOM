@@ -77,7 +77,6 @@ import 'package:appscom/src/res/colors.dart';
 import 'package:go_router/go_router.dart';
 */
 import 'package:appscom/src/res/components/course.dart';
-import 'components/course_card.dart';
 import 'components/secondary_course_card.dart';
 
 class HomePage extends StatelessWidget {

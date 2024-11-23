@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+//import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:flutter_svg/svg.dart';
 
@@ -35,7 +35,7 @@ class Page10 extends StatelessWidget {
                               padding: const EdgeInsets.only(left: 20),
                               child: CourseCard(course: course),
                             ))
-                        .toList(),
+                        ,
                   ],
                 ),
               ),
@@ -66,9 +66,9 @@ class Page10 extends StatelessWidget {
 
 class SecondaryCourseCard extends StatelessWidget {
   const SecondaryCourseCard({
-    Key? key,
+    super.key,
     required this.course,
-  }) : super(key: key);
+  });
 
   final Course course;
 

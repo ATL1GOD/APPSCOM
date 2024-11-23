@@ -4,12 +4,12 @@ import 'package:appscom/src/utils/rive_asset.dart';
 
 class SideMenuTile extends StatelessWidget {
   const SideMenuTile({
-    Key? key,
+    super.key,
     required this.menu,
     required this.press,
     required this.riveonInit,
     required this.isActive,
-  }) : super(key: key);
+  });
 
   final RiveAsset menu;
   final VoidCallback press;

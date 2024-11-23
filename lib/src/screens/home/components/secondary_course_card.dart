@@ -5,9 +5,9 @@ import 'package:appscom/src/res/components/course.dart';
 
 class SecondaryCourseCard extends StatelessWidget {
   const SecondaryCourseCard({
-    Key? key,
+    super.key,
     required this.course,
-  }) : super(key: key);
+  });
 
   final Course course;
 
