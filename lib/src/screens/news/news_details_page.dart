@@ -34,7 +34,7 @@ class NewsDetailsPage extends StatelessWidget {
             bottom: 0,
             child: SizedBox(
               width: size.width,
-              height: size.height * 0.25,
+              height: size.height * 0.1,
               child: DecoratedBox(
                 decoration: BoxDecoration(
                   gradient: LinearGradient(

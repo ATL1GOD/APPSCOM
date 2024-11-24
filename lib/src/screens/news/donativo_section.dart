@@ -14,6 +14,7 @@ class DonativoSection extends StatelessWidget {
         Text(
           'El Comité de Procuración de Fondos (CPF) de la ESCOM los invita a ser parte de una cultura filantrópica en nuestra casa de estudios, para alentar, propiciar, apoyar y atender los distintos programas académicos, científicos, tecnológicos y de investigación en todos los niveles.',
           style: Theme.of(context).textTheme.bodyLarge,
+          textAlign: TextAlign.justify,
         ),
         const SizedBox(height: 16.0),
 

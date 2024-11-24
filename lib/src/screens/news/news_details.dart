@@ -3,7 +3,7 @@ import 'package:appscom/src/screens/news/news_item.dart';
 
 import 'calendario_section.dart';
 import 'donativo_section.dart';
-
+import 'redes_section.dart';
 
 class NewsDetailsBody extends StatelessWidget {
   final NewsItem newsItem;
@@ -12,7 +12,64 @@ class NewsDetailsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+     return Padding(
+      padding: const EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 80.0),
+      child: SingleChildScrollView( // Se asegura de que todo sea desplazable
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(height: 16.0),
+            Row(
+              children: [
+                CircleAvatar(
+                  backgroundImage: NetworkImage(newsItem.imgPath),
+                ),
+                const SizedBox(width: 8.0),
+                Text(
+                  newsItem.author,
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+              ],
+            ),
+            const SizedBox(height: 16.0),
+
+            // Renderiza contenido específico según la categoría o ID
+            if (newsItem.category == 'Semestre 2025/1' &&
+                newsItem.title.contains('Calendario')) ...[
+              const CalendarioSection(),
+            ] else if (newsItem.category == 'Apoyo' &&
+                newsItem.title.contains('Donativos')) ...[
+              const DonativoSection(),
+            ] else if (newsItem.category == 'Redes Sociales' &&
+                newsItem.title.contains('Visita nuestras redes sociales')) ...[
+              const RedesSection(),
+            ] else ...[
+              Text(
+                'No se encontró contenido para esta noticia',
+                style: Theme.of(context).textTheme.bodyLarge,
+              ),
+            ],
+          ],
+        ),
+      ),
+    );
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //
+    /*return Padding(
       padding: const EdgeInsets.fromLTRB(30.0,0.0,30.0,80.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -34,7 +91,8 @@ class NewsDetailsBody extends StatelessWidget {
           //Renderiza contenido específico según la categoría o ID
           if (newsItem.category == 'Semestre 2025/1' && newsItem.title.contains('Calendario')) ...[
           const CalendarioSection(),
-          
+          */
+          //////
           
           /*Text(
             'Conoce los calendarios académicos para el ciclo escolar 2024 - 2025 en sus diversas modalidades:',
@@ -152,9 +210,14 @@ class NewsDetailsBody extends StatelessWidget {
               ),
             ),
           )*/
-           ] else if (newsItem.category == 'Apoyo' && newsItem.title.contains('Donativos')) ...[
-            // Aquí puedes agregar un widget o lógica diferente para este caso
+           //
+           /*] else if (newsItem.category == 'Apoyo' && newsItem.title.contains('Donativos')) ...[
+            
             const DonativoSection(),
+
+          ] else if (newsItem.category == 'Redes Sociales' && newsItem.title.contains('Visita nuestras redes sociales')) ...[
+            
+            const RedesSection(),
           ] 
            else ...[
             Text(
@@ -164,9 +227,11 @@ class NewsDetailsBody extends StatelessWidget {
         ],
         ],
       )
-    );
+    );*/
+    /////////////
 }
 }
+//
 
 
 

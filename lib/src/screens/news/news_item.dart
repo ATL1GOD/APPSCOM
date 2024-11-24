@@ -67,7 +67,7 @@ List<NewsItem> news = [
     id: 4,
     title: 'Visita nuestras redes sociales',
     imgPath: 'assets/png/fotografias/escuela3.png',
-    category: 'Social',
+    category: 'Redes Sociales',
     author: 'ESCOM',
   ),
 ];
