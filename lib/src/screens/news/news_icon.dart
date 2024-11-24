@@ -20,7 +20,7 @@ class AppBarIcon extends StatelessWidget {
       width: size,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: Colors.grey.withOpacity(0.15),
+        color: const Color.fromARGB(255, 226, 226, 226).withOpacity(0.15),
       ),
       child: InkWell(
         onTap: onTap,

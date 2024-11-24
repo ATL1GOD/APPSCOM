@@ -117,7 +117,7 @@ class HomePage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(25),
                 child: Text(
-                  "Apartados Interesantes",
+                  "OFERTA EDUCATIVA",
                   style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                     color: const Color.fromARGB(255, 2, 82, 148),
                     fontWeight: FontWeight.w600), 

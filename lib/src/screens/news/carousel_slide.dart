@@ -28,6 +28,7 @@ class _NewsCarouselSliderState extends State<NewsCarouselSlider> {
             ),
           );
         },
+        
         child: Container(
           margin: const EdgeInsets.all(5.0),
           child: ClipRRect(
@@ -154,3 +155,7 @@ class _NewsCarouselSliderState extends State<NewsCarouselSlider> {
     );
   }
 }
+
+
+
+
