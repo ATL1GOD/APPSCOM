@@ -18,10 +18,11 @@ class _NewsCarouselSliderState extends State<NewsCarouselSlider> {
 
   @override
   Widget build(BuildContext context) {
-    final List<Widget> imageSliders = news.map((item) {
+    final List<Widget> imageSliders = news.asMap().entries.map((entry) {
+      final index = entry.key;
+      final item = entry.value;
       return InkWell(
         onTap: () {
-          final index = news.indexOf(item);
           Navigator.of(context, rootNavigator: true).push(
             CupertinoPageRoute(
               builder: (_) => NewsDetailsPage(index: index),

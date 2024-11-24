@@ -1,7 +1,10 @@
 import  'package:flutter/material.dart';
 import 'package:appscom/src/screens/news/news_item.dart';
-import 'calendario1.dart'; // Importa la pantalla de imagen completa
-import 'pantalla_pdf.dart';
+
+import 'calendario_section.dart';
+import 'donativo_section.dart';
+
+
 class NewsDetailsBody extends StatelessWidget {
   final NewsItem newsItem;
 
@@ -28,7 +31,12 @@ class NewsDetailsBody extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 16.0),
-          Text(
+          //Renderiza contenido específico según la categoría o ID
+          if (newsItem.category == 'Semestre 2025/1' && newsItem.title.contains('Calendario')) ...[
+          const CalendarioSection(),
+          
+          
+          /*Text(
             'Conoce los calendarios académicos para el ciclo escolar 2024 - 2025 en sus diversas modalidades:',
             style: Theme.of(context).textTheme.bodyLarge,
           ),
@@ -143,9 +151,19 @@ class NewsDetailsBody extends StatelessWidget {
                 ],
               ),
             ),
-          )
+          )*/
+           ] else if (newsItem.category == 'Apoyo' && newsItem.title.contains('Donativos')) ...[
+            // Aquí puedes agregar un widget o lógica diferente para este caso
+            const DonativoSection(),
+          ] 
+           else ...[
+            Text(
+              'No se encontró contenido para esta noticia',
+              style: Theme.of(context).textTheme.bodyLarge,
+            ),
         ],
-    )
+        ],
+      )
     );
 }
 }

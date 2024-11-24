@@ -78,12 +78,14 @@ flutter:
     - assets/logo/
     - assets/rive/
     - assets/icons/
-    - assets/png/fotografias/
     # otras rutas de assets...
     - assets/pdf/
 
     # PNGs
     - assets/png/
+    - assets/png/donativo/
+    - assets/png/calendarios/
+    - assets/png/fotografias/
     - assets/png/m8/
     - assets/png/m13/
     - assets/png/m10/

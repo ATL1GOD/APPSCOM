@@ -60,7 +60,7 @@ List<NewsItem> news = [
     title: 'Donativos',
     imgPath:
         'assets/png/fotografias/escuela7.png',
-    category: 'Semestre 2025/1',
+    category: 'Apoyo',
     author: 'ESCOM',
   ),
   NewsItem(
