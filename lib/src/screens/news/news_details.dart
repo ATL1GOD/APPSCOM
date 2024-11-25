@@ -1,10 +1,10 @@
 import  'package:flutter/material.dart';
 import 'package:appscom/src/screens/news/news_item.dart';
 
-import 'calendario_section.dart';
-import 'becas_section.dart';
-import 'redes_section.dart';
-import 'fotos_section.dart';
+import 'calendario/calendario_section.dart';
+import 'becas/becas_section.dart';
+import 'social/redes_section.dart';
+import 'fotografias/fotos_section.dart';
 class NewsDetailsBody extends StatelessWidget {
   final NewsItem newsItem;
 
