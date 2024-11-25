@@ -57,11 +57,11 @@ List<NewsItem> news = [
   ),
   NewsItem(
     id: 3,
-    title: 'Donativos',
+    title: 'Becas Escolares',
     imgPath:
-        'assets/png/fotografias/escuela7.png',
-    category: 'Apoyo',
-    author: 'ESCOM',
+        'assets/png/fotografias/escuela4.png',
+    category: 'Becas',
+    author: 'Departamento de Becas',
   ),
   NewsItem(
     id: 4,

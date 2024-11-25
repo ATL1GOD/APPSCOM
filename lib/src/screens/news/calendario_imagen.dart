@@ -18,7 +18,7 @@ class FullScreenCalendario extends StatelessWidget {
         final result = await ImageGallerySaver.saveImage(
           Uint8List.fromList(response.bodyBytes),
           quality: 100,
-          name: "Calendario 2025/1",
+          name: "Visualizacion de Imagen",
         );
 
         if (result['isSuccess']) {
