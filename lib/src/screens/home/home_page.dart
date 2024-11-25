@@ -97,7 +97,7 @@ class HomePage extends StatelessWidget {
                 child: Text(
                   "Ultimas Noticias",
                   style: Theme.of(context).textTheme.headlineMedium!.copyWith(
-                      color: Colors.blue, fontWeight: FontWeight.w800),
+                      color: const Color.fromARGB(255, 3, 102, 184), fontWeight: FontWeight.w800),
                 ),
               ),
               const NewsCarouselSlider(),

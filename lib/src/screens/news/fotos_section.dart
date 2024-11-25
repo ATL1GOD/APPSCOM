@@ -8,52 +8,52 @@ class FotosSection extends StatelessWidget {
     {
       'imageUrl': 'assets/png/fotografias/escuela1.png',
       'title': 'Foto 1',
-      'author': 'Autor 1',
+      'author': 'Atl Cardoso',
     },
     {
       'imageUrl': 'assets/png/fotografias/escuela9.png',
       'title': 'Foto 2',
-      'author': 'Autor 2',
+      'author': 'Kelly Guzman',
     },
     {
       'imageUrl': 'assets/png/fotografias/escuela10.png',
       'title': 'Foto 3',
-      'author': 'Autor 3',
+      'author': 'Jorge Hernandez',
     },
     {
       'imageUrl': 'assets/png/fotografias/escuela11.png',
       'title': 'Foto 4',
-      'author': 'Autor 4',
+      'author': 'Yosafat Osorio',
     },
     {
-      'imageUrl': 'assets/png/fotografias/escuela12.png',
+      'imageUrl': 'assets/png/fotografias/escuela18.png',
       'title': 'Foto 5',
-      'author': 'Autor 5',
+      'author': 'Marian Mares',
     },
     {
       'imageUrl': 'assets/png/fotografias/escuela13.png',
       'title': 'Foto 6',
-      'author': 'Autor 6',
+      'author': 'Daniel Vazquez',
     },
     {
-      'imageUrl': 'assets/png/fotografias/escuela14.png',
+      'imageUrl': 'assets/png/fotografias/escuela12.png',
       'title': 'Foto 7',
-      'author': 'Autor 7',
+      'author': 'Maximiliano Guzman',
     },
     {
       'imageUrl': 'assets/png/fotografias/escuela15.png',
       'title': 'Foto 8',
-      'author': 'Autor 8',
+      'author': 'Camerina Santiago',
     },
     {
       'imageUrl': 'assets/png/fotografias/escuela16.png',
       'title': 'Foto 9',
-      'author': 'Autor 9',
+      'author': 'Luisa Luna',
     },
     {
       'imageUrl': 'assets/png/fotografias/escuela17.png',
       'title': 'Foto 10',
-      'author': 'Autor 10',
+      'author': 'Ana Noriega',
     },
     // Puedes agregar más fotos aquí
   ];

@@ -59,7 +59,7 @@ List<NewsItem> news = [
     id: 3,
     title: 'Becas Escolares',
     imgPath:
-        'assets/png/fotografias/escuela4.png',
+        'assets/png/fotografias/escuela19.png',
     category: 'Becas',
     author: 'Departamento de Becas',
   ),
