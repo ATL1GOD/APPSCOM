@@ -46,7 +46,7 @@ class _NewsCarouselSliderState extends State<NewsCarouselSlider> {
                   left: 20,
                   child: DecoratedBox(
                     decoration: BoxDecoration(
-                      color: Theme.of(context).primaryColor,
+                      color: Colors.blue,
                       borderRadius: BorderRadius.circular(16.0),
                     ),
                     child: Padding(
@@ -145,7 +145,7 @@ class _NewsCarouselSliderState extends State<NewsCarouselSlider> {
                       ? BoxShape.rectangle
                       : BoxShape.circle,
                   color: _current == entry.key
-                      ? Theme.of(context).primaryColor
+                      ? Colors.blue
                       : Colors.grey.withOpacity(0.3),
                 ),
               ),

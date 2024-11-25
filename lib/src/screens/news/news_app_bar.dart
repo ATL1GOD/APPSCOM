@@ -70,10 +70,10 @@ class _NewsDetailsAppBarState extends State<NewsDetailsAppBar> {
                 children: [
                   DecoratedBox(
                     decoration: BoxDecoration(
-                      color: Theme.of(context).primaryColor,
+                      color: Colors.blue, // pusimos primary
                       borderRadius: BorderRadius.circular(16.0),
                     ),
-                    child: Padding(
+                    child: Padding( //esto hace que el texto de la categoria se vea mejor en la imagen 
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
                         news[widget.index].category,
