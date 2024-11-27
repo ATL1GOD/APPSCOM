@@ -69,7 +69,7 @@ class HomePage extends StatelessWidget {
 */
 
 
-import 'package:appscom/src/screens/news/carousel_slide.dart';
+import 'package:appscom/src/screens/carousel/carousel_slide.dart';
 import 'package:flutter/material.dart';
 
 /*import 'package:flutter_screenutil/flutter_screenutil.dart';

@@ -1,3 +1,4 @@
+import 'package:appscom/src/screens/login/bienvenida_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:appscom/src/screens/onboarding/screens_onboarding.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -71,7 +72,8 @@ class _ContenedorOnboardingScreenState
                     TextButton(
                       onPressed: () {
                         if (ultimaPagina) {
-                          Navigator.pushReplacementNamed(context, EntryPoint.routeName);
+                          Navigator.pushReplacementNamed(context, WelcomeScreen.routeName);
+                          //EntryPoint.routeName);
                           //Navigator.pop(context); // Cierra el flujo
                         } else {
                           _controller.nextPage(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:appscom/src/screens/news/news_item.dart';
-import 'package:appscom/src/screens/news/news_app_bar.dart';
-import 'package:appscom/src/screens/news/news_details.dart';
+import 'package:appscom/src/screens/carousel/news_item.dart';
+import 'package:appscom/src/screens/carousel/news_app_bar.dart';
+import 'package:appscom/src/screens/carousel/news_details.dart';
 
 class NewsDetailsPage extends StatelessWidget {
   final int index;

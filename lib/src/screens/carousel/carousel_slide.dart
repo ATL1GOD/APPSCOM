@@ -1,8 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart'; // Paquete oficial
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:appscom/src/screens/news/news_item.dart';
-import 'package:appscom/src/screens/news/news_details_page.dart';
+import 'package:appscom/src/screens/carousel/news_item.dart';
+import 'package:appscom/src/screens/carousel/news_details_page.dart';
 
 // Renombramos el widget para evitar conflictos con el paquete oficial
 class NewsCarouselSlider extends StatefulWidget {

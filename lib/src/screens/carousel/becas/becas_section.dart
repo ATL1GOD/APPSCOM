@@ -1,5 +1,5 @@
-import 'package:appscom/src/screens/news/becas/becainstitucional.dart';
-import 'package:appscom/src/screens/news/becas/becastodas.dart';
+import 'package:appscom/src/screens/carousel/becas/becainstitucional.dart';
+import 'package:appscom/src/screens/carousel/becas/becastodas.dart';
 import 'package:flutter/material.dart';
 
 

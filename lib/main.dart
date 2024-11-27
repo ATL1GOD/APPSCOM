@@ -6,8 +6,18 @@ import 'package:appscom/src/res/colors.dart';
 import 'package:appscom/src/screens/onboarding/screens_onboarding.dart';
 import 'package:sizer/sizer.dart';
 import 'package:appscom/src/screens/entrypoint/entry_point.dart';
+import 'package:appscom/src/screens/login/bienvenida_screen.dart';
 
-void main() {
+//importacion de las opciones de firebase
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+
+
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(
     DevicePreview(
       enabled: !kReleaseMode, // Habilita DevicePreview en modo debug
@@ -56,6 +66,7 @@ class App extends StatelessWidget {
           Onboarding3Screen.routename              : (context) => const Onboarding3Screen(),
           ContenedorOnboardingScreen.routename     : (context) => const ContenedorOnboardingScreen(),
           EntryPoint.routeName                     : (context) => const EntryPoint(),
+          WelcomeScreen.routeName           : (context) => const WelcomeScreen(),
         },  
         //home: const OnboardingScreen(), // Pantalla de bienvenida directamente
       );

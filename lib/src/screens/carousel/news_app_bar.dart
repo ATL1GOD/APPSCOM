@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:appscom/src/screens/news/news_item.dart';
-import 'package:appscom/src/screens/news/news_icon.dart';
+import 'package:appscom/src/screens/carousel/news_item.dart';
+import 'package:appscom/src/screens/carousel/news_icon.dart';
 
 class NewsDetailsAppBar extends StatefulWidget {
   final int index;

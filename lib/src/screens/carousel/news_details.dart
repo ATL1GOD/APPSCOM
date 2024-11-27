@@ -1,5 +1,5 @@
 import  'package:flutter/material.dart';
-import 'package:appscom/src/screens/news/news_item.dart';
+import 'package:appscom/src/screens/carousel/news_item.dart';
 
 import 'calendario/calendario_section.dart';
 import 'becas/becas_section.dart';
