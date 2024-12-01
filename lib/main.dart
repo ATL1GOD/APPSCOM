@@ -66,7 +66,7 @@ class App extends StatelessWidget {
           Onboarding3Screen.routename              : (context) => const Onboarding3Screen(),
           ContenedorOnboardingScreen.routename     : (context) => const ContenedorOnboardingScreen(),
           EntryPoint.routeName                     : (context) => const EntryPoint(),
-          WelcomeScreen.routeName           : (context) => const WelcomeScreen(),
+          WelcomeScreen.routeName                  : (context) => const WelcomeScreen(),
         },  
         //home: const OnboardingScreen(), // Pantalla de bienvenida directamente
       );
