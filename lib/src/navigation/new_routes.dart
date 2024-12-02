@@ -1,3 +1,4 @@
+/*
 import 'package:flutter/material.dart';
 import 'package:appscom/src/screens/1/page1.dart';
 import 'package:appscom/src/screens/2/page2.dart';
@@ -77,3 +78,4 @@ var goRouter = GoRouter(
     ),
   ],
 );
+*/
