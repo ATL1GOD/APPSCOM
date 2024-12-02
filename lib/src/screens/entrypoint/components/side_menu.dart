@@ -28,8 +28,8 @@ class _SideMenuState extends State<SideMenu> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const InfoCard(
-                name: "Abu Anwar",
-                profession: "YouTuber",
+                name: "Atl & Kelly ",
+                profession: "Estudiante",
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 24, top: 32, bottom: 16),
