@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'carreras_item.dart';
-import 'app_bar.dart';
+import 'maestria_item.dart';
+import '../carreras/carrera_appbar.dart';
 
-class IngSistemas extends StatelessWidget {
-  final CarreraItem carreraItem;
+class MaestriaInteligencia extends StatelessWidget {
+  final MaestriasItem maestriaItem;
 
-  const IngSistemas({super.key, required this.carreraItem});
+  const MaestriaInteligencia({super.key, required this.maestriaItem});
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +51,7 @@ class IngSistemas extends StatelessWidget {
                   ),
                   const SizedBox(height: 25.0),
                   Text(
-                    carreraItem.objectivo,
+                    maestriaItem.objectivo,
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                           fontSize: 16.0, 
                           fontFamily: 'ExtraLight',),
@@ -91,7 +91,7 @@ class IngSistemas extends StatelessWidget {
                   ),
                   const SizedBox(height: 25.0),
                   Text(
-                    carreraItem.perfilIngreso,
+                    maestriaItem.perfilIngreso,
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                           fontSize: 16.0, 
                           fontFamily: 'ExtraLight',),
@@ -132,7 +132,7 @@ class IngSistemas extends StatelessWidget {
 
                   const SizedBox(height: 25.0),
                   Text(
-                    carreraItem.perfilEgreso,
+                    maestriaItem.perfilEgreso,
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                           fontSize: 16.0, 
                           fontFamily: 'ExtraLight',),
@@ -171,7 +171,7 @@ class IngSistemas extends StatelessWidget {
                   ),
                   const SizedBox(height: 25.0),
                   Text(
-                    carreraItem.campoLaboral,
+                    maestriaItem.campoLaboral,
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                           fontSize: 16.0, 
                           fontFamily: 'ExtraLight',),

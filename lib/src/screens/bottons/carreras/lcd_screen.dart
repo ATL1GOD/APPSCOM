@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'carreras_item.dart';
-import 'app_bar.dart';
+import 'carrera_appbar.dart';
 class LicDatos extends StatelessWidget {
   final CarreraItem carreraItem;
 

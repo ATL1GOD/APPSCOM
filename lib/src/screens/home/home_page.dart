@@ -1,6 +1,8 @@
+import 'package:appscom/src/screens/bottons/maestrias/maestria_item.dart';
+import 'package:appscom/src/screens/bottons/oferta_maestria.dart';
 import 'package:appscom/src/screens/carousel/carousel_slide.dart';
 import 'package:flutter/material.dart';
-import 'package:appscom/src/screens/bottons/carreras_item.dart';
+import 'package:appscom/src/screens/bottons/carreras/carreras_item.dart';
 import '../bottons/oferta_educativa.dart';
 
 class HomePage extends StatelessWidget {
@@ -74,6 +76,26 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.only(left: 25, right: 25, bottom: 25, top: 5),
+                child: Text(
+                  "Maestrías/Posgrados",
+                  style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                    color: const Color.fromARGB(255, 2, 82, 148),
+                    fontWeight: FontWeight.w800,
+                    fontSize: 22), // Tamaño de la fuente
+                ),
+              ),
+              ...principalesMaestrias.map(
+                (maestria) => Padding(
+                  padding:
+                      const EdgeInsets.only(left: 20, right: 20, bottom: 20),
+                  child: OfertaMaestria(
+                    maestria: maestria,
+                  ),
+                ),
+              ),
+
             ],
           ),
         ),

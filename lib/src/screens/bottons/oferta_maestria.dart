@@ -1,31 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:appscom/src/screens/bottons/carreras/carreras_item.dart';
+import 'package:appscom/src/screens/bottons/maestrias/maestria_item.dart';
 
-class OfertaEducativa extends StatelessWidget {
-  const OfertaEducativa({
+class OfertaMaestria extends StatelessWidget {
+  const OfertaMaestria({
     super.key,
-    required this.carrera,
+    required this.maestria,
   });
 
-  final Carrera carrera;
+  final Maestrias maestria;
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      child: GestureDetector(
+    return SizedBox( // Tamaño fijo opcional
+    child:GestureDetector(
     onTap: () {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => carrera.destinationScreen,
+          builder: (context) => maestria.destinationScreen,
         ),
       );
     },
     child: Container(
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
       decoration: BoxDecoration(
-        color: carrera.bgColor,
+        color: maestria.bgColor,
         borderRadius: const BorderRadius.all(Radius.circular(20)),
       ),
       child: Row(
@@ -34,7 +34,7 @@ class OfertaEducativa extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  carrera.title,
+                  maestria.title,
                   style: Theme.of(context).textTheme.titleLarge!.copyWith(
                         color: const Color.fromARGB(255, 255, 255, 255),
                         fontWeight: FontWeight.w600,
@@ -52,14 +52,14 @@ class OfertaEducativa extends StatelessWidget {
           ),
           const SizedBox(width: 8),
           SvgPicture.asset(
-            carrera.iconSrc,
+            maestria.iconSrc,
             width: 40,  // Establece el ancho del ícono
             height: 40, 
            ), // Establece la altura del ícono)
         ],
       ),
       ),
-      ),
+    ),
     );
   }
 }

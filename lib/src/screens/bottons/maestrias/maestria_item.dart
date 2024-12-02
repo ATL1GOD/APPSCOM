@@ -1,32 +1,32 @@
 import 'package:flutter/widgets.dart';
-import 'package:appscom/src/screens/bottons/iia_screen.dart';
-import 'package:appscom/src/screens/bottons/isc_screen.dart';
-import 'package:appscom/src/screens/bottons/lcd_screen.dart';
+import 'package:appscom/src/screens/bottons/carreras/isa_screen.dart';
+import 'package:appscom/src/screens/bottons/maestrias/mcscm_screen.dart';
+import 'package:appscom/src/screens/bottons/maestrias/mctiad_screen.dart';
 
 
-//nokmbres de las carreras
-class Carrera {
+//nokmbres de las Maestriass
+class Maestrias {
   final String title, description, iconSrc;
   final Color bgColor;
   final Color textColor;
-  final String carrera;
+  final String maestrias;
   final String imgenpath;
   final Widget destinationScreen;
   
 
-  Carrera({
+  Maestrias({
     required this.title,
     this.description = '',
     this.iconSrc = "",
     this.bgColor = const Color.fromARGB(255, 71, 138, 231),
     this.textColor = const Color.fromARGB(255, 0, 0, 0),
     this.imgenpath = "",
-    this.carrera = "",
+    this.maestrias = "",
     required this.destinationScreen,
   });
 }
- //ItemCarreraItem de cada carrera
-class CarreraItem{
+ //ItemMaestriasItem de cada Maestrias
+class MaestriasItem{
   final int id;
   final String title;
   final String objectivo;
@@ -35,7 +35,7 @@ class CarreraItem{
   final String atributos;
   final String campoLaboral;
 
-  CarreraItem({
+  MaestriasItem({
     required this.id,
     required this.title,
     required this.objectivo,
@@ -45,7 +45,7 @@ class CarreraItem{
     required this.campoLaboral,
   });
 
-CarreraItem copyWith({
+MaestriasItem copyWith({
     int? id,
     String? title,
     String? objectivo,
@@ -54,7 +54,7 @@ CarreraItem copyWith({
     String? atributos,
     String? campoLaboral
   }) {
-  return CarreraItem(
+  return MaestriasItem(
     id: id ?? this.id,
     title: title ?? this.title,
     objectivo: objectivo ?? this.objectivo,
@@ -66,19 +66,10 @@ CarreraItem copyWith({
   }
 }
 
-//lista de ItemCarreraItem de cada carrera 
-final List<CarreraItem> principalesCarreraItems= [
-  CarreraItem(
+//lista de ItemMaestriasItem de cada Maestrias 
+final List<MaestriasItem> principalesMaestriasItems= [
+  MaestriasItem(
     id: 0,
-    title: "Ingeniería en Sistemas Computacionales", 
-    objectivo:"Formar ingenieros en sistemas computacionales de sólida preparación científica y tecnológica en los ámbitos del desarrollo de software y hardware, que propongan, analicen, diseñen, desarrollen, implementen y gestionen sistemas computacionales a partir de tecnologías de vanguardia y metodologías, normas y estándares nacionales e internacionales de calidad; líderes de equipos de trabajo multidisciplinarios y multiculturales, con un alto sentido ético y de responsabilidad.",
-    perfilIngreso:"Los aspirantes a estudiar este programa deberán tener conocimientos en matemáticas, física e informática. Es también conveniente que posea conocimientos de inglés. Así mismo, deberán contar con habilidades como análisis y síntesis de información, razonamiento lógico y expresión oral y escrita. Así como actitudes de respeto y responsabilidad.",
-    perfilEgreso:"El egresado del programa académico de Ingeniería en Sistemas Computacionales podrá desempeñarse en equipos multidisciplinarios e interdisciplinarios en los ámbitos del desarrollo de software y hardware, sustentando su actuación profesional en valores éticos y de responsabilidad social, con un enfoque de liderazgo y sostenibilidad en los sectores público y privado.",
-    atributos: "Los atributos de egreso son un conjunto de resultados evaluables individualmente, que conforman los componentes indicativos del potencial de un egresado para adquirir las competencias o capacidades para ejercer la práctica de la ingeniería a un nivel apropiado.",
-    campoLaboral: "El campo profesional en el que se desarrollan los egresados de este Programa Académico es muy amplio, se localiza en los sectores público y privado; en consultorías, en empresas del sector financiero, comercial, de servicios o bien en aquellas dedicadas a la innovación, en entidades federales, estatales, así como pequeño empresario creando empresas emergentes (startups).", 
-  ),
-  CarreraItem(
-    id: 1,
     title: "Ingeniería en Inteligencia Artificial",  
     objectivo:"Formar expertos capaces de desarrollar sistemas inteligentes utilizando diferentes metodologías en las diferentes etapas de desarrollo y aplicando algoritmos en áreas como aprendizaje de máquina, procesamiento automático de lenguaje natural, visión artificial y modelos bioinspirados para atender las necesidades de los diferentes sectores de la sociedad a través de la generación de procesos y soluciones innovadoras.",
     perfilIngreso:"Los estudiantes que ingresen al Instituto Politécnico Nacional, en cualquiera de sus programas y niveles, deberán contar con los conocimientos y las habilidades básicas que garanticen un adecuado desempeño en el nivel al que solicitan su ingreso. Asimismo, deberán contar con las actitudes y valores necesarios para responsabilizarse de su proceso formativo y asumir una posición activa frente al estudio y al desarrollo de los proyectos y trabajos requeridos, coincidentes con el ideario y principios del IPN.",
@@ -86,8 +77,8 @@ final List<CarreraItem> principalesCarreraItems= [
     atributos: "",
     campoLaboral: "Este profesional podrá desempeñarse en el desarrollo y aplicación de la Inteligencia Artificial, en los ámbitos público y privado, en campos ocupacionales como los que se enlistan a continuación:", 
   ),
-  CarreraItem(
-    id: 2,
+  MaestriasItem(
+    id: 1,
     title: "Licenciatura en Ciencia de Datos",
     objectivo:"Formar expertos capaces de extraer conocimiento implícito y complejo, potencialmente útil a partir de grandes conjuntos de datos, utilizando métodos de inteligencia artificial, aprendizaje de máquina, estadística, sistemas de bases de datos y modelos matemáticos sobre comportamientos probables, para apoyar la toma de decisiones de alta dirección.",
     perfilIngreso:"Los estudiantes que ingresen al Instituto Politécnico Nacional, en cualquiera de sus programas y niveles, deberán contar con los conocimientos y las habilidades básicas que garanticen un adecuado desempeño en el nivel al que solicitan su ingreso. Asimismo, deberán contar con las actitudes y valores necesarios para responsabilizarse de su proceso formativo y asumir una posición activa frente al estudio y al desarrollo de los proyectos y trabajos requeridos, coincidentes con el ideario y principios del IPN.",
@@ -99,28 +90,21 @@ final List<CarreraItem> principalesCarreraItems= [
 
 
 
-//lista de carreras para la pantalla de inicio botones  
-  final List<Carrera> principalesCarreras = [
-  Carrera(
-    title: "Ingeniería en Sistemas Computacionales",  
-    carrera: "ISC",
-    iconSrc: "assets/icons/isc.svg",
-    imgenpath: "assets/png/carreras/carrera1.png",
-    destinationScreen: IngSistemas(carreraItem: principalesCarreraItems[0]), 
-  ),
-  Carrera(
-    title: "Ingeniería en Inteligencia Artificial",  
-    carrera: "IIA",
-    iconSrc: "assets/icons/ia.svg",
-    imgenpath: "assets/png/carreras/carrera4.png",
-    destinationScreen: IngArtificial(carreraItem: principalesCarreraItems[1]), 
-  ),
-  Carrera(
-    title: "Licenciatura en Ciencia de Datos",
-    carrera: "LCD",
+//lista de Maestriass para la pantalla de inicio botones  
+  final List<Maestrias> principalesMaestrias = [
+    Maestrias(
+    title: "Maestría en Ciencias en Sistemas Computacionales Móviles",
+    maestrias: "MCSCM",
     iconSrc: "assets/icons/lcd.svg",
-    imgenpath: "assets/png/carreras/carrera9.png",
-    destinationScreen: LicDatos(carreraItem: principalesCarreraItems[2],), 
+    imgenpath: "assets/png/Maestriass/Maestrias9.png",
+    destinationScreen: MaestriaSistemas(maestriaItem: principalesMaestriasItems[0],), 
+  ),
+  Maestrias(
+    title: "Maestría en Ciencia y Tecnología de Inteligencia Artificial y Ciencia de Datos",
+    maestrias: "MCTIACD",
+    iconSrc: "assets/icons/lcd.svg",
+    imgenpath: "assets/png/Maestriass/Maestrias9.png",
+    destinationScreen: MaestriaInteligencia(maestriaItem: principalesMaestriasItems[1],), 
   ),
 ];
 

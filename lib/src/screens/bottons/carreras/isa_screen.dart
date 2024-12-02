@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'carreras_item.dart';
-import 'app_bar.dart';
-class IngArtificial extends StatelessWidget {
-  final CarreraItem carreraItem;
-  
-  const IngArtificial({super.key, required this.carreraItem});
+import 'carrera_appbar.dart';
 
- 
-  @override
+class IngAutomotriz extends StatelessWidget {
+  final CarreraItem carreraItem;
+
+  const IngAutomotriz({super.key, required this.carreraItem});
+
+   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
-          CarreraAppBar(index: 1), 
+          CarreraAppBar(index: 3), 
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.all(35.0),
