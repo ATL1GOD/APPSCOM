@@ -5,6 +5,8 @@ import 'calendario/calendario_section.dart';
 import 'becas/becas_section.dart';
 import 'social/redes_section.dart';
 import 'fotografias/fotos_section.dart';
+
+
 class NewsDetailsBody extends StatelessWidget {
   final NewsItem newsItem;
 

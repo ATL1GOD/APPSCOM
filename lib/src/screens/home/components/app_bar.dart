@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:appscom/src/screens/carousel/news_item.dart';
-import 'package:appscom/src/screens/carousel/news_icon.dart';
+import 'carrera_icon.dart';
+import 'carreras_item.dart';
 
-class NewsDetailsAppBar extends StatefulWidget {
+class CarreraAppBar extends StatefulWidget {
   final int index;
-  const NewsDetailsAppBar({super.key, required this.index});
+  const CarreraAppBar({super.key, required this.index});
 
   @override
-  State<NewsDetailsAppBar> createState() => _NewsDetailsAppBarState();
+  State<CarreraAppBar> createState() => _CarreraAppBarState();
 }
 
-class _NewsDetailsAppBarState extends State<NewsDetailsAppBar> {
+class _CarreraAppBarState extends State<CarreraAppBar> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
 
     return SliverAppBar(
-      expandedHeight: size.height * 0.4,
+      expandedHeight: size.height * 0.3,
       leading: Padding(
         padding: const EdgeInsets.only(left: 8.0),
         child: AppBarIcon(
@@ -26,34 +26,35 @@ class _NewsDetailsAppBarState extends State<NewsDetailsAppBar> {
         ),
       ),
       leadingWidth: 40,
-      actions: [
-        AppBarIcon(
-          icon: news[widget.index].isFavorite
-              ? Icons.bookmark
-              : Icons.bookmark_border_outlined,
-          onTap: () {
-            setState(() {
-              news[widget.index] = news[widget.index]
-                  .copyWith(isFavorite: !news[widget.index].isFavorite);
-            });
-          },
-        ),
-        const SizedBox(width: 6.0),
-        const AppBarIcon(icon: Icons.menu),
-        const SizedBox(width: 6.0),
-      ],
       iconTheme: const IconThemeData(color: Colors.white),
       flexibleSpace: FlexibleSpaceBar(
         background: Stack(
           children: [
-            Positioned.fill(
-              child: Image.network(
-                news[widget.index].imgPath,
-                fit: BoxFit.cover,
-              ),
+          Positioned.fill(
+            child: Stack(
+              fit: StackFit.expand, // Esto hace que la imagen ocupe todo el espacio
+              children: [
+                Image.asset(
+                 principalesCarreras[widget.index].imgenpath,
+                  fit: BoxFit.cover, // Ajuste de la imagen hace que la imagen cubra todo el espacio
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        Colors.black.withOpacity(0.6),
+                        Colors.transparent,
+                      ],
+                      begin: Alignment.bottomCenter,
+                      end: Alignment.topCenter,
+                    ),
+                  ),
+                ),
+              ],
             ),
-           
-            Positioned(
+          ),
+
+             Positioned(
               bottom: 50,
               left: 16,
               child: Column(
@@ -61,13 +62,13 @@ class _NewsDetailsAppBarState extends State<NewsDetailsAppBar> {
                 children: [
                   DecoratedBox(
                     decoration: BoxDecoration(
-                      color: Colors.blue, // pusimos primary
+                      color: const Color.fromARGB(255, 10, 83, 167), // pusimos primary
                       borderRadius: BorderRadius.circular(16.0),
                     ),
                     child: Padding( //esto hace que el texto de la categoria se vea mejor en la imagen 
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.only(left: 15.0, top: 8.0, right: 15.0, bottom:8.0),
                       child: Text(
-                        news[widget.index].category,
+                        principalesCarreras[widget.index].carrera,//cambiamos la categoria por carrera
                         style: const TextStyle(
                           color: Colors.white,
                         ),
@@ -76,9 +77,10 @@ class _NewsDetailsAppBarState extends State<NewsDetailsAppBar> {
                   ),
                   const SizedBox(height: 12.0),
                   SizedBox(
-                    width: size.width * 0.9,
+                    width: size.width * 0.9, 
                     child: Text(
-                      news[widget.index].title,
+                      principalesCarreras[widget.index].title,
+                      textAlign: TextAlign.left,
                       style:
                           Theme.of(context).textTheme.headlineSmall!.copyWith(
                                 color: Colors.white,
@@ -88,18 +90,12 @@ class _NewsDetailsAppBarState extends State<NewsDetailsAppBar> {
                     ),
                   ),
                   const SizedBox(height: 8.0),
-                  Text(
-                    '${news[widget.index].author} • ${news[widget.index].time}',
-                    style: const TextStyle(
-                      color: Colors.white,
-                    ),
-                  ),
                 ],
               ),
             ),
           ],
         ),
-        stretchModes: const [
+        stretchModes: const [ 
           StretchMode.blurBackground,
           StretchMode.zoomBackground,
         ],
@@ -123,3 +119,5 @@ class _NewsDetailsAppBarState extends State<NewsDetailsAppBar> {
     );
   }
 }
+      
+           
