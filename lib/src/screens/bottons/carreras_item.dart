@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
-import 'package:appscom/src/screens/home/components/iia_screen.dart';
-import 'package:appscom/src/screens/home/components/isc_screen.dart';
-import 'package:appscom/src/screens/home/components/lcd_screen.dart';
+import 'package:appscom/src/screens/bottons/iia_screen.dart';
+import 'package:appscom/src/screens/bottons/isc_screen.dart';
+import 'package:appscom/src/screens/bottons/lcd_screen.dart';
 
 
 //nokmbres de las carreras
@@ -119,7 +119,7 @@ final List<CarreraItem> principalesCarreraItems= [
     title: "Licenciatura en Ciencia de Datos",
     carrera: "LCD",
     iconSrc: "assets/icons/lcd.svg",
-    imgenpath: "assets/png/carreras/carrera6.png",
+    imgenpath: "assets/png/carreras/carrera9.png",
     destinationScreen: LicDatos(carreraItem: principalesCarreraItems[2],), 
   ),
 ];

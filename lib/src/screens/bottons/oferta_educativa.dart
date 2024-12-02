@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:appscom/src/screens/home/components/carreras_item.dart'; // Ensure this path is correct or update it to the correct path
+import 'package:appscom/src/screens/bottons/carreras_item.dart'; // Ensure this path is correct or update it to the correct path
 
 class OfertaEducativa extends StatelessWidget {
   const OfertaEducativa({

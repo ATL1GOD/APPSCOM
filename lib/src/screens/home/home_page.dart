@@ -1,7 +1,7 @@
 import 'package:appscom/src/screens/carousel/carousel_slide.dart';
 import 'package:flutter/material.dart';
-import 'package:appscom/src/screens/home/components/carreras_item.dart';
-import 'components/oferta_educativa.dart';
+import 'package:appscom/src/screens/bottons/carreras_item.dart';
+import '../bottons/oferta_educativa.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
