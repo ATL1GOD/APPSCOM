@@ -124,7 +124,17 @@ class _EntryPointState extends State<EntryPoint>
           ),
         ],
       ),
-      bottomNavigationBar: Transform.translate(
+    );
+  }
+}
+
+
+
+
+
+
+
+      /*bottomNavigationBar: Transform.translate(
         offset: Offset(0, 100 * animation.value),
         child: SafeArea(
           child: Container(
@@ -186,7 +196,5 @@ class _EntryPointState extends State<EntryPoint>
             ),
           ),
         ),
-      ),
-    );
-  }
-}
+      ),*/
+    

@@ -34,7 +34,7 @@ class _SideMenuState extends State<SideMenu> {
               Padding(
                 padding: const EdgeInsets.only(left: 24, top: 32, bottom: 16),
                 child: Text(
-                  "Browse".toUpperCase(),
+                  "Comunidad IPN".toUpperCase(),
                   style: Theme.of(context)
                       .textTheme
                       .titleMedium!
@@ -67,7 +67,7 @@ class _SideMenuState extends State<SideMenu> {
               Padding(
                 padding: const EdgeInsets.only(left: 24, top: 32, bottom: 16),
                 child: Text(
-                  "History".toUpperCase(),
+                  "Escomunidad".toUpperCase(),
                   style: Theme.of(context)
                       .textTheme
                       .titleMedium!

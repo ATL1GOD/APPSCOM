@@ -9,7 +9,7 @@ class Menu {
 
 List<Menu> sidebarMenus = [
   Menu(
-    title: "Home",
+    title: "Inicio",
     rive: RiveModel(
         src: "assets/rive/icons.riv",
         artboard: "HOME",

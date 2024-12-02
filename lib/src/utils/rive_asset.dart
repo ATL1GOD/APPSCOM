@@ -43,25 +43,25 @@ List<RiveAsset> sideMenus = [
     "assets/rive/icons.riv",
     artboard: "HOME",
     stateMachineName: "HOME_interactivity",
-    title: "Home",
+    title: "Inicio",
   ),
   RiveAsset(
     "assets/rive/icons.riv",
     artboard: "SEARCH",
     stateMachineName: "SEARCH_Interactivity",
-    title: "Search",
+    title: "Ubicacion",
   ),
   RiveAsset(
     "assets/rive/icons.riv",
     artboard: "LIKE/STAR",
     stateMachineName: "STAR_Interactivity",
-    title: "Favorites",
+    title: "Oferta Educativa",
   ),
   RiveAsset(
     "assets/rive/icons.riv",
     artboard: "CHAT",
     stateMachineName: "CHAT_Interactivity",
-    title: "Help",
+    title: "Profesores",
   ),
 ];
 
@@ -70,12 +70,12 @@ List<RiveAsset> sideMenu2 = [
     "assets/rive/icons.riv",
     artboard: "TIMER",
     stateMachineName: "TIMER_Interactivity",
-    title: "History",
+    title: "Profesores",
   ),
   RiveAsset(
     "assets/rive/icons.riv",
     artboard: "BELL",
     stateMachineName: "BELL_Interactivity",
-    title: "Notification",
+    title: "..",
   ),
 ];
