@@ -1,5 +1,4 @@
 import 'package:flutter/widgets.dart';
-import 'package:appscom/src/screens/bottons/carreras/isa_screen.dart';
 import 'package:appscom/src/screens/bottons/maestrias/mcscm_screen.dart';
 import 'package:appscom/src/screens/bottons/maestrias/mctiad_screen.dart';
 

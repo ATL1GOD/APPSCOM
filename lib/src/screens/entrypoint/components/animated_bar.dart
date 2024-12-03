@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
-
-class AnimatedBar extends StatelessWidget {
+/*import 'package:flutter/material.dart';
+//este 
+class AnimatedBar extends StatelessWidget { 
   const AnimatedBar({
     super.key,
     required this.isActive,
@@ -21,4 +21,4 @@ class AnimatedBar extends StatelessWidget {
       ),
     );
   }
-}
+}*/

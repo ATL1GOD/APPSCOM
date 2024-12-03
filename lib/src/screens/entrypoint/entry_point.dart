@@ -7,7 +7,6 @@ import 'package:appscom/src/res/constants.dart';
 import 'package:appscom/src/screens/home/home_page.dart';
 import 'package:appscom/src/utils/rive_utils.dart';
 
-import 'components/animated_bar.dart';
 import 'components/menu_btn.dart';
 import 'package:appscom/src/utils/rive_asset.dart';
 
@@ -28,7 +27,7 @@ class _EntryPointState extends State<EntryPoint>
   late Animation<double> animation;
   late Animation<double> scalAnimation;
 
-  // Let's chnage the name
+ 
   late SMIBool isSideBarClosed;
 
   bool isSideMenuClosed = true;
@@ -93,7 +92,7 @@ class _EntryPointState extends State<EntryPoint>
               ),
             ),
           ),
-          // As you can see it's an ANimated button
+          
           AnimatedPositioned(
             duration: Duration(milliseconds: 200),
             curve: Curves.fastOutSlowIn,
@@ -105,10 +104,10 @@ class _EntryPointState extends State<EntryPoint>
                     artboard,
                     stateMachineName: "State Machine");
                 isSideBarClosed = controller.findSMI("isOpen") as SMIBool;
-                // Now it's easy to understand
+               
                 isSideBarClosed.value = true;
               },
-              // Let's fixed the scal animation
+             
               press: () {
                 isSideBarClosed.value = !isSideBarClosed.value;
                 if (isSideMenuClosed) {
