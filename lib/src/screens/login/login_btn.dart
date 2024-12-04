@@ -45,7 +45,7 @@ class LoginAndSignupBtn extends StatelessWidget {
             elevation: 0,
           ),
           child: Text(
-            "Sign Up".toUpperCase(),
+            "Seguir como invitado".toUpperCase(),
             style: const TextStyle(color: Colors.black),
           ),
         ),

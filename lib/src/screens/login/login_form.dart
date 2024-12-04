@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'constants.dart';
+import 'package:appscom/src/screens/perfil/perfil_form.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
@@ -76,6 +77,7 @@ class _LoginFormState extends State<LoginForm> {
             onPressed: () => _submitForm(context),
             child: Text(
               "Entrar".toUpperCase(),
+              
             ),
           ),
         ],
@@ -115,6 +117,14 @@ class _LoginFormState extends State<LoginForm> {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text("Bienvenido, ${userData['nombre']}")),
+        );
+      }
+        if (mounted) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => PerfilUsuario(nombre: userData['nombre']),
+          ),
         );
       }
     } else {
