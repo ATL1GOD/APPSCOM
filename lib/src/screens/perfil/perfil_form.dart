@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'fadeanimation.dart';
+import 'package:appscom/src/screens/bottons/carreras/carrera_icon.dart';
+
 
 class PerfilUsuario extends StatelessWidget {
   final String nombre;
+  //final int index;
   static const String routename = 'PerfilUsuario';
 
   const PerfilUsuario({super.key, required this.nombre});
@@ -28,7 +31,7 @@ class PerfilUsuario extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       body: FutureBuilder<Map<String, dynamic>?>(
         future: _fetchAlumnoData(nombre),
         builder: (context, snapshot) {
@@ -37,137 +40,155 @@ class PerfilUsuario extends StatelessWidget {
           }
 
           if (snapshot.hasError) {
-            return Center(child: Text('Error: ${snapshot.error}', style: const TextStyle(color: Colors.white)));
+            return Center(
+              child: Text(
+                'Error: ${snapshot.error}',
+                style: const TextStyle(color: Colors.white),
+              ),
+            );
           }
 
           if (!snapshot.hasData || snapshot.data == null) {
-            return const Center(child: Text('No se encontraron datos', style: TextStyle(color: Colors.white)));
+            return const Center(
+              child: Text(
+                'No se encontraron datos',
+                style: TextStyle(color: Colors.white),
+              ),
+            );
           }
 
           final alumnoData = snapshot.data!;
-          return Stack(
-            children: <Widget>[
-              CustomScrollView(
-                slivers: <Widget>[
-                  SliverAppBar(
-                    expandedHeight: 450,
-                    backgroundColor: Colors.black,
-                    flexibleSpace: FlexibleSpaceBar(
-                      collapseMode: CollapseMode.pin,
-                      background: Container(
-                        decoration: const BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage('assets/user_background.jpg'), // Cambiar por una imagen válida
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              begin: Alignment.bottomRight,
-                              colors: [
-                                Colors.black,
-                                Colors.black.withOpacity(.3),
-                              ],
+          return CustomScrollView(
+            slivers: <Widget>[
+              PerfilAppBar(index: nombre, alumnoData: alumnoData), // Se incluye el encabezado dinámico
+              SliverList(
+                delegate: SliverChildListDelegate([
+                  Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        const SizedBox(height: 30),
+                        FadeAnimation(
+                          1.2,
+                          Container(
+                    width: double.infinity, // Ocupa todo el ancho disponible
+                    padding: const EdgeInsets.symmetric(vertical: 12.0), // Espaciado interno
+                    decoration: BoxDecoration(
+                         color: const Color.fromARGB(255, 24, 41, 98), // Fondo azul
+                         borderRadius: BorderRadius.circular(20.0), // Esquinas redondeadas
+                         boxShadow: [
+                           BoxShadow(
+                             color: Colors.black.withOpacity(0.3), // Sombra para simular el bisel
+                             offset: const Offset(4, 4), // Dirección de la sombra (abajo y derecha)
+                             blurRadius: 6, // Difuminado
+                             spreadRadius: 1, // Extensión de la sombra
+                           ),
+                           BoxShadow(
+                             color: Colors.white.withOpacity(0.7), // Luz superior para bisel
+                             offset: const Offset(-4, -4), // Dirección opuesta (arriba y izquierda)
+                             blurRadius: 6,
+                             spreadRadius: 1,
+                           ),
+                         ],
+                       ), // Fondo azul
+                    child: Text(
+                          'Boleta: ${alumnoData['boleta']}',
+                          textAlign: TextAlign.center, // Centra el texto horizontalmente                            
+                          style: const TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
                             ),
                           ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(20),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: <Widget>[
-                                FadeAnimation(
-                                  1,
-                                  Text(
-                                    '${alumnoData['nombre']} ${alumnoData['primerApellido']} ${alumnoData['segundoApellido']}',
-                                    style: const TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 40,
-                                    ),
-                                  ),
-                                ),
-                                const SizedBox(height: 20),
-                                Row(
-                                  children: <Widget>[
-                                    FadeAnimation(
-                                      1.2,
-                                      Text(
-                                        'Boleta: ${alumnoData['boleta']}',
-                                        style: const TextStyle(color: Colors.grey, fontSize: 16),
-                                      ),
-                                    ),
-                                    const SizedBox(width: 50),
-                                    FadeAnimation(
-                                      1.3,
-                                      Text(
-                                        'Carrera: ${alumnoData['carrera']}',
-                                        style: const TextStyle(color: Colors.grey, fontSize: 16),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
                       ),
-                    ),
-                  ),
-                  SliverList(
-                    delegate: SliverChildListDelegate([
-                      Padding(
-                        padding: const EdgeInsets.all(20),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            FadeAnimation(
-                              1.6,
-                              Text(
-                                'CURP: ${alumnoData['curp']}',
-                                style: const TextStyle(color: Colors.grey, height: 1.4, fontSize: 18),
-                              ),
-                            ),
-                            const SizedBox(height: 20),
-                            FadeAnimation(
-                              1.6,
-                              Text(
-                                'Información adicional sobre el alumno...',
-                                style: const TextStyle(color: Colors.grey, height: 1.4),
-                              ),
-                            ),
-                            const SizedBox(height: 120),
-                          ],
                         ),
-                      )
-                    ]),
-                  )
-                ],
-              ),
-              Positioned.fill(
-                bottom: 50,
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: FadeAnimation(
-                    2,
-                    Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 30),
-                      height: 50,
+                        const SizedBox(height: 20),
+                        FadeAnimation(
+                          1.3,
+                      Container(
+                      width: double.infinity, // Ocupa todo el ancho disponible
+                      padding: const EdgeInsets.symmetric(vertical: 12.0), // Espaciado interno
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        color: Colors.yellow[700],
+                         color: const Color.fromARGB(255, 24, 41, 98), // Fondo azul
+                         borderRadius: BorderRadius.circular(20.0), // Esquinas redondeadas
+                         boxShadow: [
+                           BoxShadow(
+                             color: Colors.black.withOpacity(0.3), // Sombra para simular el bisel
+                             offset: const Offset(4, 4), // Dirección de la sombra (abajo y derecha)
+                             blurRadius: 6, // Difuminado
+                             spreadRadius: 1, // Extensión de la sombra
+                           ),
+                           BoxShadow(
+                             color: Colors.white.withOpacity(0.7), // Luz superior para bisel
+                             offset: const Offset(-4, -4), // Dirección opuesta (arriba y izquierda)
+                             blurRadius: 6,
+                             spreadRadius: 1,
+                           ),
+                         ],
+                       ), // Fondo azul
+                    child: Text(
+                          'CURP: ${alumnoData['curp']}',
+                          textAlign: TextAlign.center, // Centra el texto horizontalmente                            
+                          style: const TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ),
+                          ),
                       ),
-                      child: const Align(
-                        child: Text(
-                          'Seguir',
-                          style: TextStyle(color: Colors.white),
                         ),
+                        const SizedBox(height: 10),
+                        FadeAnimation(
+                          1.3,
+                          Container(
+                      width: double.infinity, // Ocupa todo el ancho disponible
+                      padding: const EdgeInsets.symmetric(vertical: 12.0), // Espaciado interno
+                      decoration: BoxDecoration(
+                         color: const Color.fromARGB(255, 24, 41, 98), // Fondo azul
+                         borderRadius: BorderRadius.circular(20.0), // Esquinas redondeadas
+                         boxShadow: [
+                           BoxShadow(
+                             color: Colors.black.withOpacity(0.3), // Sombra para simular el bisel
+                             offset: const Offset(4, 4), // Dirección de la sombra (abajo y derecha)
+                             blurRadius: 6, // Difuminado
+                             spreadRadius: 1, // Extensión de la sombra
+                           ),
+                           BoxShadow(
+                             color: Colors.white.withOpacity(0.7), // Luz superior para bisel
+                             offset: const Offset(-4, -4), // Dirección opuesta (arriba y izquierda)
+                             blurRadius: 6,
+                             spreadRadius: 1,
+                           ),
+                         ],
+                       ), // Fondo azul
+                    child: Text(
+                          'Carrera: ${alumnoData['carrera']}',
+                          textAlign: TextAlign.center, // Centra el texto horizontalmente                            
+                          style: const TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ),
+                          ),
                       ),
+                        ),
+                        const SizedBox(height: 20),
+                        
+                        const SizedBox(height: 20),
+                        /*FadeAnimation(
+                          1.5,
+                          Text(
+                            'Información adicional sobre el alumno...',
+                            style: const TextStyle(color: Color.fromARGB(255, 0, 0, 0), height: 18),
+                          ),
+                        ),*/
+                        const SizedBox(height: 120),
+                      ],
                     ),
                   ),
-                ),
-              )
+                ]),
+              ),
             ],
           );
         },
@@ -175,6 +196,141 @@ class PerfilUsuario extends StatelessWidget {
     );
   }
 }
+
+class PerfilAppBar extends StatefulWidget {
+  final String index;
+  final Map<String, dynamic> alumnoData;
+  const PerfilAppBar({super.key, required this.index, required this.alumnoData});
+
+  @override
+  State<PerfilAppBar> createState() => _PerfilAppBarState();
+}
+
+class _PerfilAppBarState extends State<PerfilAppBar> {
+  @override
+  Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+
+    return SliverAppBar(
+      expandedHeight: size.height * 0.3,
+      leading: Padding(
+        padding: const EdgeInsets.only(left: 8.0),
+        child: AppBarIcon(
+          icon: Icons.chevron_left,
+          iconSize: 30,
+          onTap: () => Navigator.of(context).pop(),
+        ),
+      ),
+      leadingWidth: 40,
+      iconTheme: const IconThemeData(color: Colors.white),
+      flexibleSpace: FlexibleSpaceBar(
+        background: Stack(
+          children: [
+            Positioned.fill(
+              child: Stack(
+                fit: StackFit.expand,
+                children: [
+                  Image.asset(
+                    "assets/png/fondo_tiburon.png",
+                    fit: BoxFit.cover,
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [
+                          Colors.black.withOpacity(0.6),
+                          Colors.transparent,
+                        ],
+                        begin: Alignment.bottomCenter,
+                        end: Alignment.topCenter,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Positioned(
+              bottom: 50,
+              left: 16,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Align(
+                    alignment: Alignment.topRight,
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        color: const Color.fromARGB(255, 226, 230, 234),
+                        borderRadius: BorderRadius.circular(16.0),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          "PERFIL",
+                          style: const TextStyle(
+                            color: Color.fromARGB(255, 4, 46, 130),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+              Positioned(
+              top: 80, // Ajusta la posición vertical para ponerla más arriba
+              right: 100, // Ajusta la posición horizontal para moverla a la derecha
+              child: CircleAvatar(
+                radius: 30, // Tamaño de la bolita
+                backgroundColor: Colors.blue, // Color de fondo de la bolita
+                child: Icon(
+                  Icons.account_circle, // Ícono de usuario
+                  size: 30, // Tamaño del ícono
+                  color: Colors.white, // Color del ícono
+                ),
+              ),
+            ),
+                  const SizedBox(height: 12.0),
+                  SizedBox(
+                    width: size.width * 0.9,
+                    child: Text(
+                      "${widget.alumnoData['nombre']} ${widget.alumnoData['primerApellido']} ${widget.alumnoData['segundoApellido']} ",
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context)
+                          .textTheme
+                          .headlineSmall!
+                          .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
+                      maxLines: 3,
+                    ),
+                  ),
+                  const SizedBox(height: 8.0),
+                ],
+              ),
+            ),
+          ],
+        ),
+        stretchModes: const [
+          StretchMode.blurBackground,
+          StretchMode.zoomBackground,
+        ],
+      ),
+      pinned: true,
+      bottom: const PreferredSize(
+        preferredSize: Size.fromHeight(0),
+        child: SizedBox(
+          height: 30,
+          width: double.infinity,
+          child: DecoratedBox(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.vertical(
+                top: Radius.circular(36.0),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
 
 
 /*import 'package:flutter/material.dart';
