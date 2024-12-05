@@ -7,8 +7,8 @@ import 'package:appscom/src/screens/onboarding/screens_onboarding.dart';
 import 'package:sizer/sizer.dart';
 import 'package:appscom/src/screens/entrypoint/entry_point.dart';
 import 'package:appscom/src/screens/login/bienvenida_screen.dart';
-import 'package:appscom/src/screens/perfil/perfil_form.dart';
-
+import 'package:appscom/src/screens/perfil/perfil_detalles.dart';
+import 'package:appscom/src/screens/profesores/template_gallery_app.dart';
 //importacion de las opciones de firebase
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -69,6 +69,7 @@ class App extends StatelessWidget {
           EntryPoint.routeName                     : (context) => const EntryPoint(),
           WelcomeScreen.routeName                  : (context) => const WelcomeScreen(),
           PerfilUsuario.routename                  : (context) => const PerfilUsuario(nombre: 'YourName'),
+          TemplateGalleryApp.routeName             : (context) => const TemplateGalleryApp(),
         },  
         //home: const OnboardingScreen(), // Pantalla de bienvenida directamente
       );

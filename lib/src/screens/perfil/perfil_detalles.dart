@@ -68,13 +68,48 @@ class PerfilUsuario extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        const SizedBox(height: 30),
+                        const SizedBox(height: 10),
+                        FadeAnimation( // Animación de entrada de los elementos de la pantalla
+                          1.2,
+                          Container(
+                         width: double.infinity,// Ocupa todo el ancho disponible
+                         padding: const EdgeInsets.symmetric(vertical: 12.0), // Espaciado interno
+                         decoration: BoxDecoration(
+                         color: const Color.fromARGB(255, 200, 240, 255), // Fondo azul
+                         borderRadius: BorderRadius.circular(20.0), // Esquinas redondeadas
+                         boxShadow: [
+                           BoxShadow(
+                             color: Colors.black.withOpacity(0.3), // Sombra para simular el bisel
+                             offset: const Offset(4, 4), // Dirección de la sombra (abajo y derecha)
+                             blurRadius: 6, // Difuminado
+                             spreadRadius: 1, // Extensión de la sombra
+                           ),
+                           BoxShadow(
+                             color: Colors.white.withOpacity(0.7), // Luz superior para bisel
+                             offset: const Offset(-4, -4), // Dirección opuesta (arriba y izquierda)
+                             blurRadius: 6,
+                             spreadRadius: 1,
+                           ),
+                         ],
+                       ), // Fondo azul
+                    child: Text(
+                          "Datos del Alumno",
+                          textAlign: TextAlign.center, // Centra el texto horizontalmente                            
+                          style: const TextStyle(
+                              color: Color.fromARGB(255, 0, 0, 0),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                            ),
+                          ),
+                      ),
+                        ),
+                        const SizedBox(height: 20),
                         FadeAnimation(
                           1.2,
                           Container(
-                    width: double.infinity, // Ocupa todo el ancho disponible
-                    padding: const EdgeInsets.symmetric(vertical: 12.0), // Espaciado interno
-                    decoration: BoxDecoration(
+                         width: double.infinity, // Ocupa todo el ancho disponible
+                         padding: const EdgeInsets.symmetric(vertical: 12.0), // Espaciado interno
+                         decoration: BoxDecoration(
                          color: const Color.fromARGB(255, 24, 41, 98), // Fondo azul
                          borderRadius: BorderRadius.circular(20.0), // Esquinas redondeadas
                          boxShadow: [
@@ -138,7 +173,7 @@ class PerfilUsuario extends StatelessWidget {
                           ),
                       ),
                         ),
-                        const SizedBox(height: 10),
+                        const SizedBox(height: 20),
                         FadeAnimation(
                           1.3,
                           Container(
@@ -212,7 +247,7 @@ class _PerfilAppBarState extends State<PerfilAppBar> {
     final size = MediaQuery.of(context).size;
 
     return SliverAppBar(
-      expandedHeight: size.height * 0.3,
+      expandedHeight: size.height * 0.4, //
       leading: Padding(
         padding: const EdgeInsets.only(left: 8.0),
         child: AppBarIcon(
@@ -226,6 +261,7 @@ class _PerfilAppBarState extends State<PerfilAppBar> {
       flexibleSpace: FlexibleSpaceBar(
         background: Stack(
           children: [
+            // Fondo de imagen con gradiente
             Positioned.fill(
               child: Stack(
                 fit: StackFit.expand,
@@ -249,44 +285,42 @@ class _PerfilAppBarState extends State<PerfilAppBar> {
                 ],
               ),
             ),
+            // "PERFIL" en la parte superior derecha
             Positioned(
-              bottom: 50,
-              left: 16,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Align(
-                    alignment: Alignment.topRight,
-                    child: DecoratedBox(
-                      decoration: BoxDecoration(
-                        color: const Color.fromARGB(255, 226, 230, 234),
-                        borderRadius: BorderRadius.circular(16.0),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          "PERFIL",
-                          style: const TextStyle(
-                            color: Color.fromARGB(255, 4, 46, 130),
-                          ),
-                        ),
-                      ),
+              top: 40, // Margen superior
+              right: 20, // Margen derecho
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 226, 230, 234),
+                  borderRadius: BorderRadius.circular(16.0),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    "PERFIL",
+                    style: const TextStyle(
+                      color: Color.fromARGB(255, 4, 46, 130),
                     ),
                   ),
-              Positioned(
-              top: 80, // Ajusta la posición vertical para ponerla más arriba
-              right: 100, // Ajusta la posición horizontal para moverla a la derecha
-              child: CircleAvatar(
-                radius: 30, // Tamaño de la bolita
-                backgroundColor: Colors.blue, // Color de fondo de la bolita
-                child: Icon(
-                  Icons.account_circle, // Ícono de usuario
-                  size: 30, // Tamaño del ícono
-                  color: Colors.white, // Color del ícono
                 ),
               ),
             ),
-                  const SizedBox(height: 12.0),
+            // Bola de usuario centrada con nombre debajo
+            Align(
+              alignment: Alignment.center,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  CircleAvatar(
+                    radius: 50, // Tamaño de la bolita
+                    backgroundColor: const Color.fromARGB(255, 2, 55, 99), // Color de fondo de la bola
+                    child: Icon(
+                      Icons.account_circle, // Ícono de usuario
+                      size: 80, // Tamaño del ícono
+                      color: Colors.white, // Color del ícono
+                    ),
+                  ),
+                  const SizedBox(height: 20.0), // Espaciado entre la bola y el nombre
                   SizedBox(
                     width: size.width * 0.9,
                     child: Text(
@@ -295,11 +329,13 @@ class _PerfilAppBarState extends State<PerfilAppBar> {
                       style: Theme.of(context)
                           .textTheme
                           .headlineSmall!
-                          .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
+                          .copyWith(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
                       maxLines: 3,
                     ),
                   ),
-                  const SizedBox(height: 8.0),
                 ],
               ),
             ),
@@ -310,6 +346,7 @@ class _PerfilAppBarState extends State<PerfilAppBar> {
           StretchMode.zoomBackground,
         ],
       ),
+
       pinned: true,
       bottom: const PreferredSize(
         preferredSize: Size.fromHeight(0),

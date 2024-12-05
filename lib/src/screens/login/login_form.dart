@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'constants.dart';
-import 'package:appscom/src/screens/perfil/perfil_form.dart';
+import 'package:appscom/src/screens/perfil/perfil_detalles.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
