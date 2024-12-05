@@ -64,8 +64,8 @@ void loadContacts() async {
 
 
 
-
-/*class Contact {
+/*
+class Contact {
   const Contact(
     this.name,
     this.role,
@@ -244,5 +244,4 @@ void loadContacts() async {
       'hp.com',
     ),
   ];
-}
-*/
+}*/

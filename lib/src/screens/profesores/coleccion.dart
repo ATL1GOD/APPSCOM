@@ -1,5 +1,5 @@
-/*import 'package:flutter/material.dart';
-import 'package:flutter_projects/projects/template_gallery/ui/contact_list_page.dart';
+import 'package:flutter/material.dart';
+import 'contact_list_page.dart';
 
 class TemplateGalleryApp extends StatelessWidget {
   const TemplateGalleryApp({super.key});
@@ -17,11 +17,11 @@ class TemplateGalleryApp extends StatelessWidget {
           ),
         ),
         textTheme: TextTheme(
-          bodyText2: TextStyle(color: Colors.grey[800]),
+          bodyMedium: TextStyle(color: Colors.grey[800]),
         ),
         iconTheme: const IconThemeData(color: Colors.grey),
       ),
       home: const ContactListPage(),
     );
   }
-}*/
+}
