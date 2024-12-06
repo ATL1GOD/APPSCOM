@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'contact_list_page.dart';
+import 'busqueda.dart';
 
 class TemplateGalleryApp extends StatelessWidget {
   static const String routeName ='TemplateGalleryApp';
@@ -15,6 +16,7 @@ class TemplateGalleryApp extends StatelessWidget {
           centerTitle: true,
           iconTheme: const IconThemeData(
             color: Colors.white70,
+            
           ),
         ),
         textTheme: TextTheme(
@@ -26,3 +28,5 @@ class TemplateGalleryApp extends StatelessWidget {
     );
   }
 }
+
+

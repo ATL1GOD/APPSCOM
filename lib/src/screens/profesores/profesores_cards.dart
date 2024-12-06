@@ -15,7 +15,7 @@ class ContactCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Hero(
-      tag: contact.nombre,
+      tag: contact.nombre, 
       child: Material(
         color: Colors.transparent,
         child: Column(
@@ -72,9 +72,9 @@ class ContactCard extends StatelessWidget {
                     child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      //---------------------------
-                      // Name and Role
-                      //---------------------------
+
+                      const SizedBox(height: 5),
+                      
                       Row(
                         children: [
                           const Icon(

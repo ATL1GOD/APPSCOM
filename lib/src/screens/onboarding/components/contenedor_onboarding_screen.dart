@@ -73,7 +73,8 @@ class _ContenedorOnboardingScreenState
                     TextButton(
                       onPressed: () {
                         if (ultimaPagina) {
-                          Navigator.pushReplacementNamed(context, TemplateGalleryApp.routeName);//WelcomeScreen.routeName);
+                          Navigator.pushReplacementNamed(context, //TemplateGalleryApp.routeName);
+                          WelcomeScreen.routeName);
                           //EntryPoint.routeName);
                           //Navigator.pop(context); // Cierra el flujo
                         } else {
