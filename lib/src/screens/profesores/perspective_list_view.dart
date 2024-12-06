@@ -23,8 +23,8 @@ class PerspectiveListView extends StatefulWidget {
   final EdgeInsetsGeometry padding;
   final ValueChanged<int?>? onTapFrontItem;
   final ValueChanged<int>? onChangeFrontItem;
-  final Color backItemsShadowColor;
-  final bool enableBackItemsShadow;
+  final Color backItemsShadowColor; //esto hace que el color de la sombra sea transparente
+  final bool enableBackItemsShadow; // esto hace que la sombra de los elementos de atrás sea transparente
 
   @override
   PerspectiveListViewState createState() => PerspectiveListViewState();

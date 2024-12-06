@@ -2,30 +2,45 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Contact {
   const Contact(
-    this.name,
+    this.nombre,
     this.role,
-    this.address,
-    this.phone,
+    this.academia,
+    this.aula,
     this.email,
-    this.website,
+    this.empleado,
+    this.lunes,
+    this.martes,
+    this.miercoles,
+    this.jueves,
+    this.viernes,
   );
 
-  final String name;
+  final String nombre;
   final String role;
-  final String address;
-  final String phone;
+  final String academia;
+  final String aula;
   final String email;
-  final String website;
+  final String empleado;
+  final String lunes;
+  final String martes;
+  final String miercoles;
+  final String jueves;
+  final String viernes;
 
   // Método para crear un Contact desde Firestore
   factory Contact.fromFirestore(Map<String, dynamic> data) {
     return Contact(
       '${data['nombre']} ${data['primerApellido']} ${data['segundoApellido']}', // Nombre completo
       'Profesor', // Puedes personalizar esto
-      'Academia: ${data['academia']}', // Dirección (ejemplo)
-      'No disponible', // Teléfono (puedes ajustarlo)
-      'No disponible', // Email (ajústalo si tienes este dato)
-      'No disponible', // Website (ajústalo si tienes este dato)
+      '${data['academia']} (${data['siglasAcademia']})', // Siglas de la academia
+      '${data['aula']}', // Aula
+      '${data['email']}', // Email
+      '${data['numEmpleado']}', // Teléfono
+      '${data['lunes'] ?? 'No disponible'}', // Lunes
+      '${data['martes'] ?? 'No disponible'}', // Martes
+      '${data['miercoles'] ?? 'No disponible'}', // Miércoles
+      '${data['jueves'] ?? 'No disponible'}', // Jueves
+      '${data['viernes'] ?? 'No disponible'}', // Viernes
     );
   }
 }
@@ -43,7 +58,7 @@ Future<List<Contact>> fetchContacts() async {
 void loadContacts() async {
   final contacts = await fetchContacts();
   contacts.forEach((contact) {
-    print(contact.name); // Imprime los nombres en la consola
+    print(contact.nombre); // Imprime los nombres en la consola
   });
 }
 

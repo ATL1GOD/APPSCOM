@@ -180,7 +180,7 @@ class ContactListPageState extends State<ContactListPage> {
 import 'package:flutter/material.dart';
 import 'contact.dart';
 import 'contact_detail_screen.dart';
-import 'cards.dart';
+import 'profesores_cards.dart';
 import 'perspective_list_view.dart';
 
 class ContactListPage extends StatefulWidget {
@@ -260,13 +260,19 @@ class ContactListPageState extends State<ContactListPage> {
                         ),
                       ),
                     );
-                  },
+                  },                    
+
                   children: List.generate(_contacts.length, (index) {
-                    final borderColor = Colors.accents[index % Colors.accents.length];
+                  //  final borderColor = Colors.accents[index % Colors.accents.length];
                     final contact = _contacts[index];
                     return ContactCard(
-                      borderColor: borderColor,
+                      // borderColor: null,
                       contact: contact,
+                       gradient: LinearGradient(
+                        colors: [Colors.blue, const Color.fromARGB(255, 46, 7, 138)], // Degradado azul-morado
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                    ),
                     );
                   }),
                 ),

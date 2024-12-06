@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'contact.dart';
-import 'cards.dart';
+import 'profesores_cards.dart';
 
 class ContactDetailScreen extends StatelessWidget {
   const ContactDetailScreen({
@@ -16,14 +16,19 @@ class ContactDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(contact.name),
+        title: Text(contact.nombre),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: SafeArea(
           child: ContactCard(
             contact: contact,
-            borderColor: color,
+            gradient: LinearGradient(
+              colors: [color.withOpacity(0.5), color],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+            ),
+            //borderColor: color,
           ),
         ),
       ),
