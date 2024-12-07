@@ -1,95 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'contact.dart';
-
-class ContactListPage extends StatefulWidget {
-  const ContactListPage({super.key});
-
-  @override
-  State<ContactListPage> createState() => _ContactListPageState();
-}
-
-class _ContactListPageState extends State<ContactListPage> {
-  List<Contact> contacts = [];
-  List<Contact> filteredContacts = [];
-  TextEditingController searchController = TextEditingController();
-
-  @override
-  void initState() {
-    super.initState();
-    fetchContacts().then((data) {
-      setState(() {
-        contacts = data;
-        filteredContacts = data;
-      });
-    });
-
-    searchController.addListener(() {
-      filterContacts();
-    });
-  }
-
-  void filterContacts() {
-    String query = searchController.text.toLowerCase();
-    setState(() {
-      filteredContacts = contacts.where((contact) {
-        return contact.nombre.toLowerCase().contains(query) ||
-               contact.academia.toLowerCase().contains(query) ||
-               contact.email.toLowerCase().contains(query);
-      }).toList();
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Lista de Profesores'),
-      ),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextField(
-              controller: searchController,
-              decoration: InputDecoration(
-                labelText: 'Buscar',
-                prefixIcon: const Icon(Icons.search),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-              ),
-            ),
-          ),
-          Expanded(
-            child: ListView.builder(
-              itemCount: filteredContacts.length,
-              itemBuilder: (context, index) {
-                final contact = filteredContacts[index];
-                return ListTile(
-                  title: Text(contact.nombre),
-                  subtitle: Text(contact.academia),
-                  trailing: Text(contact.email),
-                  onTap: () {
-                    // Manejar clic en contacto
-                  },
-                );
-              },
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-
-/*
-import 'package:flutter/material.dart';
-import 'contact.dart';
-import 'contact_detail_screen.dart';
+import 'profesores_info.dart';
+import 'profesores_detalles_screen.dart';
 import 'profesores_cards.dart';
 import 'perspective_list_view.dart';
+import 'busqueda_profesores.dart';
 
 class ContactListPage extends StatefulWidget {
   const ContactListPage({super.key});
@@ -108,7 +22,7 @@ class ContactListPageState extends State<ContactListPage> {
   @override
   void initState() {
     super.initState();
-    _visibleItems = 8;
+    _visibleItems = 6;
     _itemExtent = 270.0;
     _loadContacts(); // Cargar contactos al inicializar
   }
@@ -128,8 +42,81 @@ class ContactListPageState extends State<ContactListPage> {
   }
 }
 
+@override
+Widget build(BuildContext context) {
+  return Scaffold(
+    resizeToAvoidBottomInset: false,
+    appBar: AppBar(
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          bottom: Radius.circular(20),
+        ),
+      ),
+      actions: [
+        IconButton(
+          onPressed: () {
+            // Navegar a la pantalla de BusquedaProfesores
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const BusquedaProfesores()),
+            );
+          },
+          icon: const Icon(Icons.search),
+        ),
+      ],
+      title: const Text('Profesores'),
+    ),
+    body: _isLoading
+        ? const Center(child: CircularProgressIndicator())
+        : _errorMessage != null
+            ? Center(child: Text(_errorMessage!))
+            : PerspectiveListView(
+                visualizedItems: _visibleItems,
+                itemExtent: _itemExtent,
+                initialIndex: 7,
+                enableBackItemsShadow: true,
+                backItemsShadowColor: Theme.of(context).scaffoldBackgroundColor,
+                padding: const EdgeInsets.all(10),
+                onTapFrontItem: (index) {
+                  // Aquí se usa el degradado
+                  final gradient = LinearGradient(
+                    colors: [
+                      Colors.blue,
+                      const Color.fromARGB(255, 58, 15, 99),
+                    ], // Degradado azul-morado
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute<dynamic>(
+                      builder: (_) => ContactDetailScreen(
+                        contact: _contacts[index!],
+                        gradient: gradient, // Usar el mismo degradado aquí
+                      ),
+                    ),
+                  );
+                },
+                children: List.generate(_contacts.length, (index) {
+                  final contact = _contacts[index];
+                  return ContactCard(
+                    contact: contact,
+                    gradient: LinearGradient(
+                      colors: [
+                        Colors.blue,
+                        const Color.fromARGB(255, 58, 15, 99),
+                      ], // Degradado azul-morado
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                  );
+                }),
+              ),
+  );
+}
 
-  @override
+
+  /*@override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -139,13 +126,20 @@ class ContactListPageState extends State<ContactListPage> {
             bottom: Radius.circular(20),
           ),
         ),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.search),
-          ),
-        ],
-        title: const Text('TEMPLATE GALLERY'),
+       actions: [
+            IconButton(
+              onPressed: () {
+                // Navegar a la pantalla de BusquedaProfesores
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const BusquedaProfesores()),
+                );
+              },
+              icon: const Icon(Icons.search),
+            ),
+          ],
+
+        title: const Text('Profesores'),
       ),
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
@@ -154,12 +148,12 @@ class ContactListPageState extends State<ContactListPage> {
               : PerspectiveListView(
                   visualizedItems: _visibleItems,
                   itemExtent: _itemExtent,
-                  initialIndex: 7,
+                  initialIndex: 7, 
                   enableBackItemsShadow: true,
                   backItemsShadowColor: Theme.of(context).scaffoldBackgroundColor,
                   padding: const EdgeInsets.all(10),
                   onTapFrontItem: (index) {
-                    final color = Colors.accents[index! % Colors.accents.length];
+                    final color = Colors.accents[index! % Colors.accents.length]; 
                     Navigator.push(
                       context,
                       MaterialPageRoute<dynamic>(
@@ -178,18 +172,18 @@ class ContactListPageState extends State<ContactListPage> {
                       // borderColor: null,
                       contact: contact,
                        gradient: LinearGradient(
-                        colors: [Colors.blue, const Color.fromARGB(255, 46, 7, 138)], // Degradado azul-morado
+                        colors: [Colors.blue, const Color.fromARGB(255, 58, 15, 99)], // Degradado azul-morado
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                     ),
                     );
                   }),
                 ),
-     // drawer: _buildDrawer(),
+     //drawer: _buildDrawer(),
     );
-  }
+  }*/
 
-  Widget _buildDrawer() {
+  /*Widget _buildDrawer() {
     return Drawer(
       child: Material(
         textStyle: const TextStyle(color: Colors.white, fontSize: 16),
@@ -281,6 +275,5 @@ class ContactListPageState extends State<ContactListPage> {
         ),
       ),
     );
-  }
+  }*/
 }
-*/

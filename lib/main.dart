@@ -13,6 +13,22 @@ import 'package:appscom/src/screens/profesores/template_gallery_app.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
+/*void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  // Asegúrate de que las tareas de renderizado no se ejecuten antes de la inicialización
+  WidgetsBinding.instance.addPostFrameCallback((_) {
+    runApp(
+      DevicePreview(
+        enabled: !kReleaseMode, // Habilita DevicePreview en modo debug
+        builder: (context) => const App(), // Llama al widget principal
+      ),
+    );
+  });
+}*/
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
