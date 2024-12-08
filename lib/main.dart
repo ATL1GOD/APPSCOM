@@ -56,6 +56,7 @@ class App extends StatelessWidget {
         builder: (context, orientation, devicetype) {      
 
        return MaterialApp(
+        // ignore: deprecated_member_use
         useInheritedMediaQuery: true, // Necesario para DevicePreview
         locale: DevicePreview.locale(context), // Soporte de idiomas
         builder: DevicePreview.appBuilder, // Builder de DevicePreview
