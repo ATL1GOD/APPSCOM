@@ -5,10 +5,27 @@ allprojects {
     }
 }
 
+subprojects {
+    afterEvaluate { project ->
+        if (project.hasProperty('android')) {
+            // Establecer el namespace en cada subproyecto (módulo Android)
+            project.android {
+                // Aseguramos que el namespace esté configurado
+                if (!project.hasProperty('namespace')) {
+                    // Aquí asigna el namespace de forma explícita, por ejemplo con project.group
+                    namespace "com.example.${project.name}"  // Asegúrate de ajustarlo según el nombre de tu paquete
+                }
+            }
+        }
+    }
+}
+
 rootProject.buildDir = "../build"
+
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
 }
+
 subprojects {
     project.evaluationDependsOn(":app")
 }
