@@ -1,3 +1,4 @@
+import 'package:appscom/src/screens/maps/mapa.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -86,6 +87,7 @@ class App extends StatelessWidget {
           WelcomeScreen.routeName                  : (context) => const WelcomeScreen(),
           PerfilUsuario.routename                  : (context) => const PerfilUsuario(nombre: 'YourName'),
           TemplateGalleryApp.routeName             : (context) => const TemplateGalleryApp(),
+          SectionMap.routeName                     : (context) => const SectionMap(),        
         },  
         //home: const OnboardingScreen(), // Pantalla de bienvenida directamente
       );
