@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'pantalla_pdf.dart'; // Asegúrate de importar el archivo PDFViewerPage
-import 'calendario_imagen.dart'; // Importa la pantalla de imagen completa
-
 
 class CalendarioSection extends StatelessWidget {
   const CalendarioSection({super.key});
@@ -19,7 +17,7 @@ class CalendarioSection extends StatelessWidget {
 
         // Primer Calendario Escolarizado
         GestureDetector(
-          onTap: () {
+          onTap: () {/*
             Navigator.push(
               context,
               MaterialPageRoute(
@@ -27,7 +25,7 @@ class CalendarioSection extends StatelessWidget {
                   imageUrl: 'assets/png/calendarios/calendario_escolarizado.png',
                 ),
               ),
-            );
+            );*/
           },
           child: ClipRRect(
             borderRadius: BorderRadius.circular(8.0),
@@ -76,7 +74,7 @@ class CalendarioSection extends StatelessWidget {
 
         // Segundo Calendario No Escolarizado
         GestureDetector(
-          onTap: () {
+          onTap: () {/*
             Navigator.push(
               context,
               MaterialPageRoute(
@@ -84,7 +82,7 @@ class CalendarioSection extends StatelessWidget {
                   imageUrl: 'assets/png/calendarios/calendario_noescolarizado.png',
                 ),
               ),
-            );
+            );*/
           },
           child: ClipRRect(
             borderRadius: BorderRadius.circular(8.0),

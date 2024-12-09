@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'contact.dart';
+import 'profesores_info.dart';
 import 'profesores_cards.dart';
 
 class ContactDetailScreen extends StatelessWidget {
   const ContactDetailScreen({
     super.key,
     required this.contact,
-    required this.color,
+    required this.gradient,
   });
 
   final Contact contact;
-  final Color color;
+  final LinearGradient? gradient;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class ContactDetailScreen extends StatelessWidget {
           child: ContactCard(
             contact: contact,
             gradient: LinearGradient(
-              colors: [color.withOpacity(0.5), color],
+              colors: [gradient?.colors.first.withOpacity(0.5) ?? Colors.transparent, gradient?.colors.last ?? Colors.transparent],
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
             ),
