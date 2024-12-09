@@ -1,5 +1,4 @@
 {
     "cmake.sourceDirectory": "C:/Users/Atl1God/Desktop/ESCOM ATL/SEPTIMO SEMESTRE/DISEÑO MOVIL/appscom/linux",
-    "java.compile.nullAnalysis.mode": "automatic",
-    "cmake.ignoreCMakeListsMissing": true
+    "java.compile.nullAnalysis.mode": "automatic"
 }
