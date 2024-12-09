@@ -4,6 +4,7 @@ import 'background.dart';
 import 'responsive.dart';
 import 'login_btn.dart';
 import 'bienvenida_imagen.dart';
+import 'package:appscom/src/screens/custom_drawer.dart';
 
 class WelcomeScreen extends StatelessWidget {
   static const String routeName = '/WelcomeScreen';
@@ -11,7 +12,8 @@ class WelcomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Background(
+    return const  MenuGlobal(
+      child: Background(
       child: SingleChildScrollView(
         child: SafeArea(
           child: Responsive(
@@ -38,6 +40,7 @@ class WelcomeScreen extends StatelessWidget {
           ),
         ),
       ),
+    ),
     );
   }
 }

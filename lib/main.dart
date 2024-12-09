@@ -9,10 +9,27 @@ import 'package:appscom/src/screens/entrypoint/entry_point.dart';
 import 'package:appscom/src/screens/login/bienvenida_screen.dart';
 import 'package:appscom/src/screens/perfil/perfil_detalles.dart';
 import 'package:appscom/src/screens/profesores/template_gallery_app.dart';
+import 'package:appscom/src/screens/maps/mapa_screen.dart';
 //importacion de las opciones de firebase
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
+/*void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  // Asegúrate de que las tareas de renderizado no se ejecuten antes de la inicialización
+  WidgetsBinding.instance.addPostFrameCallback((_) {
+    runApp(
+      DevicePreview(
+        enabled: !kReleaseMode, // Habilita DevicePreview en modo debug
+        builder: (context) => const App(), // Llama al widget principal
+      ),
+    );
+  });
+}*/
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -39,6 +56,7 @@ class App extends StatelessWidget {
         builder: (context, orientation, devicetype) {      
 
        return MaterialApp(
+        // ignore: deprecated_member_use
         useInheritedMediaQuery: true, // Necesario para DevicePreview
         locale: DevicePreview.locale(context), // Soporte de idiomas
         builder: DevicePreview.appBuilder, // Builder de DevicePreview
@@ -70,6 +88,7 @@ class App extends StatelessWidget {
           WelcomeScreen.routeName                  : (context) => const WelcomeScreen(),
           PerfilUsuario.routename                  : (context) => const PerfilUsuario(nombre: 'YourName'),
           TemplateGalleryApp.routeName             : (context) => const TemplateGalleryApp(),
+          MapScreen.routeName                     : (context) => const MapScreen(),        
         },  
         //home: const OnboardingScreen(), // Pantalla de bienvenida directamente
       );

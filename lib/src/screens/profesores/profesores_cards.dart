@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'contact.dart';
+import 'profesores_info.dart';
 
 class ContactCard extends StatelessWidget {
   const ContactCard({

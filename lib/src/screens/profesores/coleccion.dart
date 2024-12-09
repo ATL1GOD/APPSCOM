@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'contact_list_page.dart';
+import 'profesores_lista.dart';
 
 class TemplateGalleryApp extends StatelessWidget {
   const TemplateGalleryApp({super.key});
