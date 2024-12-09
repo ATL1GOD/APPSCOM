@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'fadeanimation.dart';
 import 'package:appscom/src/screens/bottons/carreras/carrera_icon.dart';
-
+import 'package:appscom/src/screens/custom_drawer.dart';
 
 class PerfilUsuario extends StatelessWidget {
   final String nombre;
@@ -30,7 +30,8 @@ class PerfilUsuario extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return MenuGlobal(
+    child:Scaffold(
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       body: FutureBuilder<Map<String, dynamic>?>(
         future: _fetchAlumnoData(nombre),
@@ -227,6 +228,7 @@ class PerfilUsuario extends StatelessWidget {
             ],
           );
         },
+      ),
       ),
     );
   }
