@@ -18,7 +18,7 @@ class MenuGlobal extends StatefulWidget {
 }
 
 class _MenuGlobalState extends State<MenuGlobal> with SingleTickerProviderStateMixin {
-  RiveAsset selectedBottomNav = bottomNavs.first;
+ // RiveAsset selectedBottomNav = bottomNavs.first;
   late AnimationController _animationController;
   late Animation<double> animation;
   late Animation<double> scalAnimation;
