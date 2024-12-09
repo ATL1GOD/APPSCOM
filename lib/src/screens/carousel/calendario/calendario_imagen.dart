@@ -1,4 +1,4 @@
-/*import 'dart:typed_data';
+import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:http/http.dart' as http;
@@ -22,7 +22,6 @@ class FullScreenCalendario extends StatelessWidget {
         );
 
         if (result['isSuccess']) {
-          // ignore: use_build_context_synchronously
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(content: Text('Imagen descargada con éxito')),
           );
@@ -33,7 +32,6 @@ class FullScreenCalendario extends StatelessWidget {
         throw Exception("Error al descargar la imagen");
       }
     } catch (e) {
-      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Error al descargar la imagen: $e')),
       );
@@ -60,4 +58,4 @@ class FullScreenCalendario extends StatelessWidget {
       ),
     );
   }
-}*/
+}

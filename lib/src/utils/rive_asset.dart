@@ -15,7 +15,7 @@ class RiveAsset {
   }
 }
 
-/*List<RiveAsset> bottomNavs = [
+List<RiveAsset> bottomNavs = [
   RiveAsset("assets/rive/icons.riv",
       artboard: "CHAT", 
       stateMachineName: "CHAT_Interactivity", 
@@ -36,7 +36,7 @@ class RiveAsset {
       artboard: "USER",
       stateMachineName: "USER_Interactivity",
       title: "Profile"),
-];*/
+];
 
 List<RiveAsset> sideMenus = [
   RiveAsset(
@@ -44,7 +44,6 @@ List<RiveAsset> sideMenus = [
     artboard: "HOME",
     stateMachineName: "HOME_interactivity",
     title: "Inicio",
-    
   ),
   RiveAsset(
     "assets/rive/icons.riv",

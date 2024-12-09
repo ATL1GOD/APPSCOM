@@ -62,23 +62,3 @@ void loadContacts() async {
   });
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

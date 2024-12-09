@@ -4,7 +4,6 @@ import 'package:appscom/src/screens/onboarding/screens_onboarding.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:appscom/src/screens/entrypoint/entry_point.dart';
 import 'package:appscom/src/screens/profesores/template_gallery_app.dart';
-import 'package:appscom/src/screens/maps/mapa_screen.dart';
 
 class ContenedorOnboardingScreen extends StatefulWidget {
   static const String routename = 'ContenedorOnboarding';
@@ -74,9 +73,7 @@ class _ContenedorOnboardingScreenState
                     TextButton(
                       onPressed: () {
                         if (ultimaPagina) {
-                          Navigator.pushReplacementNamed(context, 
-                          //MapScreen.routeName);
-                          //TemplateGalleryApp.routeName);
+                          Navigator.pushReplacementNamed(context, //TemplateGalleryApp.routeName);
                           WelcomeScreen.routeName);
                           //EntryPoint.routeName);
                           //Navigator.pop(context); // Cierra el flujo
