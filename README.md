@@ -1,6 +1,6 @@
 # appscom
 
-A new Flutter project.
+Es mi proyecto actual de flutter
 
 ## Getting Started
 
