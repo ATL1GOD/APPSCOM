@@ -29,6 +29,7 @@ class PerfilUsuario extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MenuGlobal(
+      selectedIndex: 3, // Add the required selectedIndex parameter
     child:Scaffold(
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       body: FutureBuilder<Map<String, dynamic>?>(

@@ -13,6 +13,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MenuGlobal(
+      selectedIndex: 0,
     child:Scaffold(
       body: SafeArea(
         bottom: false,

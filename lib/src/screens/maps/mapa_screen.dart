@@ -23,6 +23,7 @@ class _MapScreenState extends State<MapScreen> {
   @override
   Widget build(BuildContext context) {
     return MenuGlobal(
+      selectedIndex: 0, // Add the required selectedIndex argument
     child:Scaffold(
       appBar: AppBar(
         title: Text('Mapa Atl'),
