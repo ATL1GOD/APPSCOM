@@ -45,18 +45,19 @@ class _SideMenuState extends State<SideMenu> {
                 (menu) => SideMenuTile(
                   menu: menu,
                   riveonInit: (artboard) {
-                    // Let me show you if user click on the menu how to show the animation
                     StateMachineController controller =
                         RiveUtils.getRiveController(artboard,
                             stateMachineName: menu.stateMachineName);
                     menu.input = controller.findSMI("active") as SMIBool;
-                    // See as we click them it start animate
                   },
                   press: () {
+                    //Activa la animación
                     menu.input!.change(true);
-                    Future.delayed(const Duration(seconds: 1), () {
+                    Future.delayed(const Duration(seconds: 1000), () {
                       menu.input!.change(false);
                     });
+                    //navega a la pantalla correspondiente
+                    Navigator.pushNamed(context, menu.routeName);
                     setState(() {
                       selectedMenu = menu;
                     });
@@ -86,14 +87,32 @@ class _SideMenuState extends State<SideMenu> {
                     // See as we click them it start animate
                   },
                   press: () {
-                    menu.input!.change(true);
-                    Future.delayed(const Duration(seconds: 1), () {
-                      menu.input!.change(false);
-                    });
+                    if (menu.input != null) {
+                      // Activa la animación
+                      menu.input!.change(true);
+                      Future.delayed(const Duration(seconds: 1000), () {
+                        menu.input!.change(false);
+                      });
+                    }
+                    // navega a la pantalla correspondiente
+                    Navigator.pushNamed(context, menu.routeName);
                     setState(() {
                       selectedMenu = menu;
                     });
                   },
+                  
+                  /*press: () {
+                    //Activa la animación
+                    menu.input!.change(true);
+                    Future.delayed(const Duration(seconds: 1000), () {
+                      menu.input!.change(false);
+                    });
+                    //navega a la pantalla correspondiente
+                    Navigator.pushNamed(context, menu.routeName);
+                    setState(() {
+                      selectedMenu = menu;
+                    });
+                  },*/
                   isActive: selectedMenu == menu,
                 ),
               ),

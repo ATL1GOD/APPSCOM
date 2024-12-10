@@ -21,12 +21,22 @@ class RiveUtils {
     );
   }
 
-  static StateMachineController getRiveController(Artboard artboard,
+    static StateMachineController getRiveController(Artboard artboard,
+       {stateMachineName = "State Machine 1"}) {
+     StateMachineController? controller =
+         StateMachineController.fromArtboard(artboard, stateMachineName);
+     if (controller == null) {
+       throw Exception('No se pudo cargar el controlador de la máquina de estados para $stateMachineName');
+     }
+     artboard.addController(controller);
+     return controller;
+
+  /*static StateMachineController getRiveController(Artboard artboard,
       {stateMachineName = "State Machine 1"}) {
     StateMachineController? controller =
         StateMachineController.fromArtboard(artboard, stateMachineName);
     artboard.addController(controller!);
     return controller;
-  }
+  */}
 }
 

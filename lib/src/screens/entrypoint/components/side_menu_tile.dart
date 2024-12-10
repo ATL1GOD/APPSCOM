@@ -45,7 +45,21 @@ class SideMenuTile extends StatelessWidget {
               ),
             ),
             ListTile(
-              onTap: press,
+              onTap: () {
+                // Cambia el estado de la animación a activo
+                 if (menu.input != null) {
+                    menu.input!.change(true);
+                    Future.delayed(
+                      const Duration(milliseconds: 800), // Ajusta la duración según la animación
+                      () {
+                        menu.input!.change(false); // Reinicia la animación
+                      },
+                    );
+                  }else {
+                    print('Error: menu.input es nulo');
+                    }
+                  press(); // Llama a la función `press` para manejar la lógica adicional
+                },
               leading: SizedBox(
                 height: 34,
                 width: 34,

@@ -6,6 +6,7 @@ import 'perspective_list_view.dart';
 import 'busqueda_profesores.dart';
 
 class ContactListPage extends StatefulWidget {
+  static const String routeName ='/profesores';
   const ContactListPage({super.key});
 
   @override

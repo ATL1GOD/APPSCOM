@@ -1,3 +1,5 @@
+import 'package:appscom/src/screens/home/home_page.dart';
+import 'package:appscom/src/screens/profesores/profesores_lista.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -84,11 +86,11 @@ class App extends StatelessWidget {
           Onboarding2Screen.routename              : (context) => const Onboarding2Screen(),
           Onboarding3Screen.routename              : (context) => const Onboarding3Screen(),
           ContenedorOnboardingScreen.routename     : (context) => const ContenedorOnboardingScreen(),
-          EntryPoint.routeName                     : (context) => const EntryPoint(),
+          HomePage.routeName                     : (context) => const HomePage(),
           WelcomeScreen.routeName                  : (context) => const WelcomeScreen(),
-          PerfilUsuario.routename                  : (context) => const PerfilUsuario(nombre: 'YourName'),
-          TemplateGalleryApp.routeName             : (context) => const TemplateGalleryApp(),
-          MapScreen.routeName                     : (context) => const MapScreen(),        
+          PerfilUsuario.routename                  : (context) => const PerfilUsuario(nombre: 'Nombre'),
+          ContactListPage.routeName                : (context) => const ContactListPage(),
+          MapScreen.routeName                      : (context) => const MapScreen(),        
         },  
         //home: const OnboardingScreen(), // Pantalla de bienvenida directamente
       );

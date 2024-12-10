@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 import 'profesores_lista.dart';
 
 class TemplateGalleryApp extends StatelessWidget {
@@ -25,6 +25,6 @@ class TemplateGalleryApp extends StatelessWidget {
       home: const ContactListPage(),
     );
   }
-}
+}*/
 
 

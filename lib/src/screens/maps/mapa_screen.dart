@@ -1,10 +1,12 @@
+import 'package:appscom/src/screens/custom_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:appscom/src/screens/custom_drawer.dart';
 
 class MapScreen extends StatefulWidget {
-      static const String routeName ='/MapaScreen';
+      static const String routeName ='/mapa';
   const MapScreen({super.key});
 
   @override
@@ -20,7 +22,8 @@ class _MapScreenState extends State<MapScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return MenuGlobal(
+    child:Scaffold(
       appBar: AppBar(
         title: Text('Mapa Atl'),
         backgroundColor: Color.fromARGB(255, 47, 77, 141),
@@ -186,6 +189,7 @@ class _MapScreenState extends State<MapScreen> {
             ),
         ],
       ),
+    ),
     );
   }
 

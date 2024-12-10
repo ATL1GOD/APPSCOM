@@ -4,13 +4,16 @@ import 'package:appscom/src/screens/carousel/carousel_slide.dart';
 import 'package:flutter/material.dart';
 import 'package:appscom/src/screens/bottons/carreras/carreras_item.dart';
 import '../bottons/oferta_educativa.dart';
+import 'package:appscom/src/screens/custom_drawer.dart';
 
 class HomePage extends StatelessWidget {
+  static const routeName = '/inicio';
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return MenuGlobal(
+    child:Scaffold(
       body: SafeArea(
         bottom: false,
         child: SingleChildScrollView(
@@ -100,6 +103,7 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
+    ),
     );
   }
 }

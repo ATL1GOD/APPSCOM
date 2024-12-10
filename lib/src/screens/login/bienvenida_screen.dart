@@ -7,7 +7,7 @@ import 'bienvenida_imagen.dart';
 import 'package:appscom/src/screens/custom_drawer.dart';
 
 class WelcomeScreen extends StatelessWidget {
-  static const String routeName = '/WelcomeScreen';
+  static const String routeName = '/bienvenida';
   const WelcomeScreen({super.key});
 
   @override
