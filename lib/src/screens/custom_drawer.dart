@@ -26,12 +26,15 @@ class _MenuGlobalState extends State<MenuGlobal> with SingleTickerProviderStateM
 
   @override
   void initState() {
-    _animationController = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 200),
-    )..addListener(() {
-        setState(() {});
-      });
+    super.initState();
+    selectedIndex = widget.selectedIndex; // Sincronizar con el valor recibido
+    // Inicializamos el controlador de animación
+        _animationController = AnimationController(
+          vsync: this,
+          duration: const Duration(milliseconds: 200),
+        )..addListener(() {
+            setState(() {});
+          });
 
     animation = Tween<double>(begin: 0, end: 1).animate(
       CurvedAnimation(
