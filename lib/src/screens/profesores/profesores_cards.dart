@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'profesores_info.dart';
+import 'horarios_screen.dart';
 
 class ContactCard extends StatelessWidget {
   const ContactCard({
@@ -206,7 +207,7 @@ class ContactCard extends StatelessWidget {
                         ],
                       ),
                       
-                      const SizedBox(height: 28),
+                      const SizedBox(height: 18),
                       
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround, // Espaciado entre columnas
@@ -242,6 +243,25 @@ class ContactCard extends StatelessWidget {
                          ],
                         ),
                         ],
+                      ),
+                      const SizedBox(height: 18),
+                      // Botón para ir a la pantalla de grupos
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => HorariosScreen(numEmpleado: contact.empleado),
+                              ),
+                            );
+                          },
+                          child: const Text(
+                            'Ver Grupos y Horarios',
+                            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                          ),
+                        ),
                       ),
                     ],
                   ),
