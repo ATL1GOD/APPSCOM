@@ -88,7 +88,7 @@ class App extends StatelessWidget {
           ContenedorOnboardingScreen.routename     : (context) => const ContenedorOnboardingScreen(),
           HomePage.routeName                     : (context) => const HomePage(),
           WelcomeScreen.routeName                  : (context) => const WelcomeScreen(),
-          PerfilUsuario.routename                  : (context) => const PerfilUsuario(nombre: ''),
+          PerfilUsuario.routename                  : (context) => const PerfilUsuario(nombre: 'Nombre'),
           ContactListPage.routeName                : (context) => const ContactListPage(),
           MapScreen.routeName                      : (context) => const MapScreen(),    
         },  
