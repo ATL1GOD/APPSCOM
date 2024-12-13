@@ -63,11 +63,15 @@ class SideMenu extends StatelessWidget {
                 (menu) => SideMenuTile(
                   menu: menu,
                   press: () {
-                    // Navega a la pantalla correspondiente
-                    Navigator.pushNamed(context, menu.routeName);
+                    // Actualiza el índice antes de navegar
+                    Navigator.pushNamed(context, menu.routeName).then((_) {
+                      // Asegúrate de volver al menú con el índice correcto
+                      (context as Element).markNeedsBuild();
+                    });
+                    // Puedes agregar aquí una función global para mantener sincronizado el estado
                   },
-                  // Calcular índice global sumando la longitud de sideMenus
                   isActive: selectedIndex == sideMenus.length + sideMenu2.indexOf(menu),
+                  //isActive: selectedIndex == sideMenus.indexOf(menu), // Comparar el índice seleccionado
                 ),
               ),
             ],

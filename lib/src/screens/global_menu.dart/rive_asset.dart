@@ -24,12 +24,12 @@ List<RiveAsset> sideMenus = [
   ),
   RiveAsset(
     title: "Historia y Escudo",
-    routeName: "/mapa",
+    routeName: "/historia",
     icon: Icons.star, // Icono estático de Flutter
   ),
   RiveAsset(
-    title: "Contacto",
-    routeName: "/inicio",
+    title: "Información App",
+    routeName: "/informacionApp",
     icon: Icons.chat, // Icono estático de Flutter
   ),
 ];
@@ -37,17 +37,17 @@ List<RiveAsset> sideMenus = [
 List<RiveAsset> sideMenu2 = [
   RiveAsset(
     title: "Horarios",
-    routeName: "/profesores",
+    routeName: "/horarios",
     icon: Icons.access_time, // Icono estático de Flutter
   ),
   RiveAsset(
     title: "Profesores",
-    routeName: "/bienvenida",
+    routeName: "/profesores",
     icon: Icons.person, // Icono estático de Flutter
   ),
   RiveAsset(
     title: "...",
-    routeName: "/profesores",
+    routeName: "/bienvenida",
     icon: Icons.notifications, // Icono estático de Flutter
   ),
 ];

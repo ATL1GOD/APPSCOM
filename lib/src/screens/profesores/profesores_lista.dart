@@ -4,6 +4,7 @@ import 'profesores_detalles_screen.dart';
 import 'profesores_cards.dart';
 import 'perspective_list_view.dart';
 import 'busqueda_profesores.dart';
+import 'package:appscom/src/screens/custom_drawer.dart';
 
 class ContactListPage extends StatefulWidget {
   static const String routeName ='/profesores';
@@ -45,7 +46,9 @@ class ContactListPageState extends State<ContactListPage> {
 
 @override
 Widget build(BuildContext context) {
-  return Scaffold(
+  return MenuGlobal(
+    selectedIndex: 5,
+  child: Scaffold(
     resizeToAvoidBottomInset: false,
     appBar: AppBar(
       shape: const RoundedRectangleBorder(
@@ -113,7 +116,8 @@ Widget build(BuildContext context) {
                   );
                 }),
               ),
-  );
+        ),
+  ); 
 }
 
 
