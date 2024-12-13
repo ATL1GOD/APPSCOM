@@ -1,8 +1,8 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:appscom/src/screens/global_menu.dart/side_menu.dart';
+import 'package:appscom/src/screens/global_menu/side_menu.dart';
 import 'package:appscom/src/res/constants.dart';
-import 'package:appscom/src/screens/global_menu.dart/menu_btn.dart';
+import 'package:appscom/src/screens/global_menu/menu_btn.dart';
 import 'package:rive/rive.dart';
 import 'package:appscom/src/utils/rive_utils.dart';
 
