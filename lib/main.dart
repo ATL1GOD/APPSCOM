@@ -1,5 +1,7 @@
 import 'package:appscom/src/screens/home/home_page.dart';
 import 'package:appscom/src/screens/profesores/profesores_lista.dart';
+import 'package:appscom/src/screens/provider/onboarding_provider.dart';
+import 'package:appscom/src/utils/preferences.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -12,9 +14,12 @@ import 'package:appscom/src/screens/login/bienvenida_screen.dart';
 import 'package:appscom/src/screens/perfil/perfil_detalles.dart';
 import 'package:appscom/src/screens/profesores/template_gallery_app.dart';
 import 'package:appscom/src/screens/maps/mapa_screen.dart';
+import 'package:appscom/src/screens/provider/onboarding_provider.dart';
 //importacion de las opciones de firebase
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 /*void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -38,6 +43,8 @@ void main() async{
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+    final preferences= Preferences();
+    await preferences.initialize();
   runApp(
     DevicePreview(
       enabled: !kReleaseMode, // Habilita DevicePreview en modo debug
@@ -51,49 +58,56 @@ class App extends StatelessWidget {
  
   @override
   Widget build(BuildContext context) {
+      final preferences= Preferences();
+
     //return ScreenUtilInit(
       //designSize: const Size(390, 844), // Diseño base iPhone 12
       /*builder: (context, child) =>*/
       return Sizer(
         builder: (context, orientation, devicetype) {      
 
-       return MaterialApp(
-        // ignore: deprecated_member_use
-        useInheritedMediaQuery: true, // Necesario para DevicePreview
-        locale: DevicePreview.locale(context), // Soporte de idiomas
-        builder: DevicePreview.appBuilder, // Builder de DevicePreview
-        debugShowCheckedModeBanner: false,
-        title: "APPSCOM",
-        themeMode: ThemeMode.light,
-        theme: ThemeData(
-          scaffoldBackgroundColor: AppColors.lightScaffoldBg,
-          fontFamily: "Intel", // Fuente personalizada
-          inputDecorationTheme: InputDecorationTheme(
-            filled: true,
-            fillColor: Colors.white,
-            errorStyle: const TextStyle(height: 0),
-            border: defaultInputBorder,
-            enabledBorder: defaultInputBorder,
-            focusedBorder: defaultInputBorder,
-            errorBorder: defaultInputBorder,
+       return MultiProvider(
+        providers: [
+              ChangeNotifierProvider(create: (_) => OnboardingProvider()),
+          ],
+         child: MaterialApp(
+          // ignore: deprecated_member_use
+          useInheritedMediaQuery: true, // Necesario para DevicePreview
+          locale: DevicePreview.locale(context), // Soporte de idiomas
+          builder: DevicePreview.appBuilder, // Builder de DevicePreview
+          debugShowCheckedModeBanner: false,
+          title: "APPSCOM",
+          themeMode: ThemeMode.light,
+          theme: ThemeData(
+            scaffoldBackgroundColor: AppColors.lightScaffoldBg,
+            fontFamily: "Intel", // Fuente personalizada
+            inputDecorationTheme: InputDecorationTheme(
+              filled: true,
+              fillColor: Colors.white,
+              errorStyle: const TextStyle(height: 0),
+              border: defaultInputBorder,
+              enabledBorder: defaultInputBorder,
+              focusedBorder: defaultInputBorder,
+              errorBorder: defaultInputBorder,
+            ),
           ),
-        ),
-        // Aquí se agregan las rutas de las pantallas de bienvenida
-        initialRoute: OnboardingScreen.name, // Ruta inicial
-        routes: {
-          OnboardingScreen.name                    : (context) => const OnboardingScreen(),
-          Onboarding1Screen.routename              : (context) => const Onboarding1Screen(),
-          Onboarding2Screen.routename              : (context) => const Onboarding2Screen(),
-          Onboarding3Screen.routename              : (context) => const Onboarding3Screen(),
-          ContenedorOnboardingScreen.routename     : (context) => const ContenedorOnboardingScreen(),
-          HomePage.routeName                     : (context) => const HomePage(),
-          WelcomeScreen.routeName                  : (context) => const WelcomeScreen(),
-          PerfilUsuario.routename                  : (context) => const PerfilUsuario(nombre: 'Nombre'),
-          ContactListPage.routeName                : (context) => const ContactListPage(),
-          MapScreen.routeName                      : (context) => const MapScreen(),    
-        },  
-        //home: const OnboardingScreen(), // Pantalla de bienvenida directamente
-      );
+          // Aquí se agregan las rutas de las pantallas de bienvenida
+          initialRoute: preferences.initialPage, // Ruta inicial
+          routes: {
+            OnboardingScreen.name                    : (context) => const OnboardingScreen(),
+            Onboarding1Screen.routename              : (context) => const Onboarding1Screen(),
+            Onboarding2Screen.routename              : (context) => const Onboarding2Screen(),
+            Onboarding3Screen.routename              : (context) => const Onboarding3Screen(),
+            ContenedorOnboardingScreen.routename     : (context) => const ContenedorOnboardingScreen(),
+            HomePage.routeName                     : (context) => const HomePage(),
+            WelcomeScreen.routeName                  : (context) => const WelcomeScreen(),
+            PerfilUsuario.routename                  : (context) => const PerfilUsuario(nombre: 'Nombre'),
+            ContactListPage.routeName                : (context) => const ContactListPage(),
+            MapScreen.routeName                      : (context) => const MapScreen(),    
+          },  
+          //home: const OnboardingScreen(), // Pantalla de bienvenida directamente
+               ),
+       );
     //);
       },
       );

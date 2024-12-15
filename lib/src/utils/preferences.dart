@@ -1,4 +1,4 @@
-/*import 'package:js_onboarding/pages/onboarding_page.dart';
+import 'package:appscom/src/screens/onboarding/onboarding_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Preferences {
@@ -10,18 +10,17 @@ class Preferences {
 
   Preferences._();
 
-  SharedPreferences _prefs;
+  late SharedPreferences _prefs;
 
   Future<void> initialize() async {
     _prefs = await SharedPreferences.getInstance();
   }
 
-  get initialPage {
-    return _prefs.getString('initialPage') ?? OnboardingPage.routeName;
+  String get initialPage { 
+    return _prefs.getString('initialPage') ?? OnboardingScreen.name;
   }
 
   set initialPage(String value) {
     _prefs.setString('initialPage', value);
   }
 }
-*/

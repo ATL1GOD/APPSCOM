@@ -1,8 +1,13 @@
 import 'package:appscom/src/screens/home/home_page.dart';
 import 'package:appscom/src/screens/login/bienvenida_screen.dart';
+import 'package:appscom/src/screens/provider/onboarding_provider.dart';
+import 'package:appscom/src/screens/provider/onboarding_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:appscom/src/screens/onboarding/screens_onboarding.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:provider/provider.dart';
+import 'package:appscom/src/screens/provider/onboarding_provider.dart';
+import 'package:appscom/src/utils/preferences.dart';
 //import 'package:appscom/src/screens/entrypoint/entry_point.dart';
 //import 'package:appscom/src/screens/profesores/template_gallery_app.dart';
 //import 'package:appscom/src/screens/maps/mapa_screen.dart';
@@ -23,6 +28,8 @@ class _ContenedorOnboardingScreenState
 
   @override
   Widget build(BuildContext context) {
+      final preferences= Preferences();
+     final onboardingProvider = Provider.of<OnboardingProvider>(context, listen: false);
     return Scaffold(
       body: SafeArea(
         child: Stack(
@@ -31,10 +38,14 @@ class _ContenedorOnboardingScreenState
             PageView(
               controller: _controller,
               onPageChanged: (index) {
+                onboardingProvider.currentPage = index; // Actualiza la página actual en el provider
+              },
+              /*controller: _controller, //
+              onPageChanged: (index) {
                 setState(() {
                   ultimaPagina = index == 2;
                 });
-              },
+              },*/
               children: const [
                 Onboarding1Screen(),
                 Onboarding2Screen(),
@@ -72,9 +83,12 @@ class _ContenedorOnboardingScreenState
                       ),
                     ),
                     // Botón "Siguiente" o "Listo"
-                    TextButton(
+                     Consumer<OnboardingProvider>(
+                      builder: (context, provider, child) => TextButton(
                       onPressed: () {
-                        if (ultimaPagina) {
+                        if (provider.currentPage == 2) {
+                          preferences.initialPage=HomePage.routeName;
+                          //si es la ultima pagina, redirige a la pagina de inicio
                           Navigator.pushReplacementNamed(context, HomePage.routeName);
                           //MapScreen.routeName);
                           //TemplateGalleryApp.routeName);
@@ -89,8 +103,9 @@ class _ContenedorOnboardingScreenState
                         }
                       },
                       child: Text(
-                        ultimaPagina ? 'Listo' : 'Siguiente',
+                        provider.currentPage ==2 ? 'Listo' : 'Siguiente',
                         style: const TextStyle(color: Colors.blue, fontSize: 20),
+                        ),
                       ),
                     ),
                   ],
