@@ -36,8 +36,8 @@ List<RiveAsset> sideMenus = [
 
 List<RiveAsset> sideMenu2 = [
   RiveAsset(
-    title: "Horarios",
-    routeName: "/horarios",
+    title: "Perfil",
+    routeName: "/perfil",
     icon: Icons.access_time, // Icono estático de Flutter
   ),
   RiveAsset(
