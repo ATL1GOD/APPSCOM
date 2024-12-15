@@ -1,3 +1,4 @@
+import 'package:appscom/src/screens/home/home_page.dart';
 import 'package:flutter/material.dart';
 
 import 'constants.dart';
@@ -35,7 +36,7 @@ class LoginAndSignupBtn extends StatelessWidget {
               context,
               MaterialPageRoute(
                 builder: (context) {
-                  return const LoginScreen();
+                  return const HomePage();
                 },
               ),
             );

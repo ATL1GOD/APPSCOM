@@ -4,7 +4,7 @@ import 'package:appscom/src/screens/global_menu/side_menu.dart';
 import 'package:appscom/src/res/constants.dart';
 import 'package:appscom/src/screens/global_menu/menu_btn.dart';
 import 'package:rive/rive.dart';
-import 'package:appscom/src/utils/rive_utils.dart';
+import 'rive_utils.dart';
 
 class MenuGlobal extends StatefulWidget {
   final Widget child; // Recibe el widget que se debe mostrar en el cuerpo de la página
