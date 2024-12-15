@@ -1,12 +1,9 @@
 import 'package:appscom/src/screens/home/home_page.dart';
-import 'package:appscom/src/screens/login/bienvenida_screen.dart';
-import 'package:appscom/src/screens/provider/onboarding_provider.dart';
 import 'package:appscom/src/screens/provider/onboarding_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:appscom/src/screens/onboarding/screens_onboarding.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:provider/provider.dart';
-import 'package:appscom/src/screens/provider/onboarding_provider.dart';
 import 'package:appscom/src/utils/preferences.dart';
 //import 'package:appscom/src/screens/entrypoint/entry_point.dart';
 //import 'package:appscom/src/screens/profesores/template_gallery_app.dart';
