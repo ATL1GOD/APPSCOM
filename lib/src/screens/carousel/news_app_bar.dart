@@ -20,28 +20,12 @@ class _NewsDetailsAppBarState extends State<NewsDetailsAppBar> {
       leading: Padding(
         padding: const EdgeInsets.only(left: 8.0),
         child: AppBarIcon(
-          icon: Icons.chevron_left,
-          iconSize: 30,
+          icon: Icons.arrow_back_ios_new,
+          iconSize: 24,
           onTap: () => Navigator.of(context).pop(),
         ),
       ),
       leadingWidth: 40,
-      actions: [
-        AppBarIcon(
-          icon: news[widget.index].isFavorite
-              ? Icons.bookmark
-              : Icons.bookmark_border_outlined,
-          onTap: () {
-            setState(() {
-              news[widget.index] = news[widget.index]
-                  .copyWith(isFavorite: !news[widget.index].isFavorite);
-            });
-          },
-        ),
-        const SizedBox(width: 6.0),
-        const AppBarIcon(icon: Icons.menu),
-        const SizedBox(width: 6.0),
-      ],
       iconTheme: const IconThemeData(color: Colors.white),
       flexibleSpace: FlexibleSpaceBar(
         background: Stack(

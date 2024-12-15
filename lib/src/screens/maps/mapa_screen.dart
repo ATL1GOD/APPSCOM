@@ -24,10 +24,42 @@ class _MapScreenState extends State<MapScreen> {
     return MenuGlobal(
       selectedIndex: 1, // Add the required selectedIndex argument
     child:Scaffold(
-      appBar: AppBar(
-        title: Text('Mapa Atl'),
-        backgroundColor: Color.fromARGB(255, 47, 77, 141),
-      ),
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(
+              bottom: Radius.circular(20),
+            ),
+          ),
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  const Color.fromARGB(255, 61, 151, 253), // Azul principal
+                  const Color.fromARGB(255, 17, 50, 100), // Azul brillante
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+            ),
+          ),
+          toolbarHeight: 60, //
+          title: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const Text(
+                'Mapa ESCOM',
+                style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+              const SizedBox(height: 3),
+            ],
+          ),
+        ),
       body: Stack(
         children: [
             FlutterMap(
