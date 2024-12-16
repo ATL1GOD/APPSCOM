@@ -1,3 +1,4 @@
+import 'package:appscom/src/screens/equipo_desarrollo/equipo_screen.dart';
 import 'package:appscom/src/screens/home/home_page.dart';
 import 'package:appscom/src/screens/profesores/profesores_lista.dart';
 import 'package:appscom/src/screens/provider/onboarding_provider.dart';
@@ -81,6 +82,7 @@ class App extends StatelessWidget {
             PerfilUsuario.routename                  : (context) => const PerfilUsuario(nombre: 'Nombre'),
             ContactListPage.routeName                : (context) => const ContactListPage(),
             MapScreen.routeName                      : (context) => const MapScreen(), 
+            EquipoScreen.routeName                   : (context) => const EquipoScreen(),
           },  
           //home: const OnboardingScreen(), // Pantalla de bienvenida directamente
                ),

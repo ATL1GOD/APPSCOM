@@ -47,7 +47,7 @@ class ContactListPageState extends State<ContactListPage> {
   @override
   Widget build(BuildContext context) {
     return MenuGlobal(
-      selectedIndex: 5,
+      selectedIndex: 4,
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
