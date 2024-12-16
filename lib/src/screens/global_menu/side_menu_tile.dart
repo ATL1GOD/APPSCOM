@@ -54,7 +54,10 @@ class SideMenuTile extends StatelessWidget {
 }
 
 class AnimatedActiveBar extends StatefulWidget {
+  const AnimatedActiveBar({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _AnimatedActiveBarState createState() => _AnimatedActiveBarState();
 }
 
