@@ -41,7 +41,7 @@ class MaestriaSistemas extends StatelessWidget {
                          ],
                        ), // Fondo azul
                     child: Text(
-                      "Objetivo",
+                      "Objetivos",
                       textAlign: TextAlign.center, // Centra el texto horizontalmente
                       style: Theme.of(context).textTheme.titleLarge?.copyWith(
                             color: Colors.white, // Color del texto
@@ -81,7 +81,7 @@ class MaestriaSistemas extends StatelessWidget {
                          ],
                        ), 
                     child: Text(
-                      "Perfil de Ingreso",
+                      "Requisitos de Ingreso",
                       textAlign: TextAlign.center, // Centra el texto horizontalmente
                       style: Theme.of(context).textTheme.titleLarge?.copyWith(
                             color: Colors.white, // Color del texto
@@ -91,7 +91,7 @@ class MaestriaSistemas extends StatelessWidget {
                   ),
                   const SizedBox(height: 25.0),
                   Text(
-                    maestriaItem.perfilIngreso,
+                    maestriaItem.requisitosIngreso,
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                           fontSize: 16.0, 
                           fontFamily: 'ExtraLight',),
@@ -121,7 +121,7 @@ class MaestriaSistemas extends StatelessWidget {
                          ],
                        ), 
                     child: Text(
-                      "Perfil de Egreso",
+                      "Becas",
                       textAlign: TextAlign.center, // Centra el texto horizontalmente
                       style: Theme.of(context).textTheme.titleLarge?.copyWith(
                             color: Colors.white, // Color del texto
@@ -132,13 +132,14 @@ class MaestriaSistemas extends StatelessWidget {
 
                   const SizedBox(height: 25.0),
                   Text(
-                    maestriaItem.perfilEgreso,
+                    maestriaItem.becas,
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                           fontSize: 16.0, 
                           fontFamily: 'ExtraLight',),
                     textAlign: TextAlign.justify,
                   ),
                   const SizedBox(height: 25.0),
+
                   Container(
                     width: double.infinity, // Ocupa todo el ancho disponible
                     padding: const EdgeInsets.symmetric(vertical: 12.0), // Espaciado interno
@@ -161,6 +162,46 @@ class MaestriaSistemas extends StatelessWidget {
                          ],
                        ), 
                     child: Text(
+                      "Obtencion de grado",
+                      textAlign: TextAlign.center, // Centra el texto horizontalmente
+                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                            color: Colors.white, // Color del texto
+                            fontWeight: FontWeight.bold, // Negrita para destacar
+                          ),
+                    ),
+                  ),
+                  const SizedBox(height: 25.0),
+                  Text(
+                    maestriaItem.obtencionGrado,
+                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                          fontSize: 16.0, 
+                          fontFamily: 'ExtraLight',),
+                    textAlign: TextAlign.justify,
+                  ),
+                  
+                  
+                  Container(
+                    width: double.infinity, // Ocupa todo el ancho disponible
+                    padding: const EdgeInsets.symmetric(vertical: 12.0), // Espaciado interno
+                    decoration: BoxDecoration(
+                         color: const Color.fromARGB(255, 55, 134, 199), // Fondo azul
+                         borderRadius: BorderRadius.circular(16.0), // Esquinas redondeadas
+                         boxShadow: [
+                           BoxShadow(
+                             color: Colors.black.withOpacity(0.3), // Sombra para simular el bisel
+                             offset: const Offset(4, 4), // Dirección de la sombra (abajo y derecha)
+                             blurRadius: 6, // Difuminado
+                             spreadRadius: 1, // Extensión de la sombra
+                           ),
+                           BoxShadow(
+                             color: Colors.white.withOpacity(0.7), // Luz superior para bisel
+                             offset: const Offset(-4, -4), // Dirección opuesta (arriba y izquierda)
+                             blurRadius: 6,
+                             spreadRadius: 1,
+                           ),
+                         ],
+                       ), // Fondo azul
+                    child: Text(
                       "Campo Laboral",
                       textAlign: TextAlign.center, // Centra el texto horizontalmente
                       style: Theme.of(context).textTheme.titleLarge?.copyWith(
@@ -177,6 +218,7 @@ class MaestriaSistemas extends StatelessWidget {
                           fontFamily: 'ExtraLight',),
                     textAlign: TextAlign.justify,
                   ),
+                  const SizedBox(height: 25.0),
                 ],
               ),
             ),

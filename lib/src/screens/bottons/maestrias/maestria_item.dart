@@ -29,18 +29,19 @@ class MaestriasItem{
   final int id;
   final String title;
   final String objectivo;
-  final String perfilIngreso;
-  final String perfilEgreso;
-  final String atributos;
+  final String requisitosIngreso;
+  final String becas;  
+  final String obtencionGrado;
   final String campoLaboral;
+  
 
   MaestriasItem({
     required this.id,
     required this.title,
     required this.objectivo,
-    required this.perfilIngreso,
-    required this.perfilEgreso,
-    required this.atributos,
+    required this.requisitosIngreso,
+    required this.becas,
+    required this.obtencionGrado,
     required this.campoLaboral,
   });
 
@@ -48,18 +49,18 @@ MaestriasItem copyWith({
     int? id,
     String? title,
     String? objectivo,
-    String? perfilIngreso,
-    String? perfilEgreso,
-    String? atributos,
+    String? requisitosIngreso,
+    String? becas,
+    String? obtencionGrado,
     String? campoLaboral
   }) {
   return MaestriasItem(
     id: id ?? this.id,
     title: title ?? this.title,
     objectivo: objectivo ?? this.objectivo,
-    perfilIngreso: perfilIngreso ?? this.perfilIngreso,
-    perfilEgreso: perfilEgreso ?? this.perfilEgreso,
-    atributos: atributos ?? this.atributos,
+    requisitosIngreso: requisitosIngreso ?? this.requisitosIngreso,
+    becas: becas ?? this.becas,
+    obtencionGrado: obtencionGrado ?? this.obtencionGrado,
     campoLaboral: campoLaboral ?? this.campoLaboral,
   );
   }
@@ -69,20 +70,20 @@ MaestriasItem copyWith({
 final List<MaestriasItem> principalesMaestriasItems= [
   MaestriasItem(
     id: 0,
-    title: "Ingeniería en Inteligencia Artificial",  
-    objectivo:"Formar expertos capaces de desarrollar sistemas inteligentes utilizando diferentes metodologías en las diferentes etapas de desarrollo y aplicando algoritmos en áreas como aprendizaje de máquina, procesamiento automático de lenguaje natural, visión artificial y modelos bioinspirados para atender las necesidades de los diferentes sectores de la sociedad a través de la generación de procesos y soluciones innovadoras.",
-    perfilIngreso:"Los estudiantes que ingresen al Instituto Politécnico Nacional, en cualquiera de sus programas y niveles, deberán contar con los conocimientos y las habilidades básicas que garanticen un adecuado desempeño en el nivel al que solicitan su ingreso. Asimismo, deberán contar con las actitudes y valores necesarios para responsabilizarse de su proceso formativo y asumir una posición activa frente al estudio y al desarrollo de los proyectos y trabajos requeridos, coincidentes con el ideario y principios del IPN.",
-    perfilEgreso:"El egresado de la Ingeniería en Inteligencia Artificial se desempeñará colaborativamente en equipos multidisciplinarios en el análisis, diseño, implementación, validación, implantación, supervisión y gestión de sistemas inteligentes, aplicando algoritmos en áreas como aprendizaje de máquina, procesamiento automático de lenguaje natural, visión artificial y modelos bioinspirados; ejerciendo su profesión con liderazgo, ética y responsabilidad social.",
-    atributos: "",
+    title: "Maestría en Ciencias en Sistemas Computacionales Móviles",  
+    objectivo:"Formar maestros en ciencias con una orientación científica altamente calificados y competitivos a nivel nacional e internacional, con la capacidad de contribuir y realizar investigación en las ciencias computacionales móviles. Innovar, implementar y aplicar la computación móvil para atender adecuadamente las necesidades de los sectores productivo y social del país.",
+    requisitosIngreso: "Los estudiantes que ingresen al Instituto Politécnico Nacional, en cualquiera de sus programas y niveles, deberán contar con los conocimientos y las habilidades básicas que garanticen un adecuado desempeño en el nivel al que solicitan su ingreso. Asimismo, deberán contar con las actitudes y valores necesarios para responsabilizarse de su proceso formativo y asumir una posición activa frente al estudio y al desarrollo de los proyectos y trabajos requeridos, coincidentes con el ideario y principios del IPN.",
+    becas: "El IPN ofrece diversas becas para apoyar a los estudiantes en su formación académica.",
+    obtencionGrado: "Para obtener el grado de Maestro en Ciencias en Sistemas Computacionales Móviles, el estudiante deberá cumplir con los requisitos establecidos por el IPN.",
     campoLaboral: "Este profesional podrá desempeñarse en el desarrollo y aplicación de la Inteligencia Artificial, en los ámbitos público y privado, en campos ocupacionales como los que se enlistan a continuación:", 
   ),
   MaestriasItem(
     id: 1,
     title: "Licenciatura en Ciencia de Datos",
     objectivo:"Formar expertos capaces de extraer conocimiento implícito y complejo, potencialmente útil a partir de grandes conjuntos de datos, utilizando métodos de inteligencia artificial, aprendizaje de máquina, estadística, sistemas de bases de datos y modelos matemáticos sobre comportamientos probables, para apoyar la toma de decisiones de alta dirección.",
-    perfilIngreso:"Los estudiantes que ingresen al Instituto Politécnico Nacional, en cualquiera de sus programas y niveles, deberán contar con los conocimientos y las habilidades básicas que garanticen un adecuado desempeño en el nivel al que solicitan su ingreso. Asimismo, deberán contar con las actitudes y valores necesarios para responsabilizarse de su proceso formativo y asumir una posición activa frente al estudio y al desarrollo de los proyectos y trabajos requeridos, coincidentes con el ideario y principios del IPN.",
-    perfilEgreso:"El egresado de la Licenciatura de Ciencia de Datos será capaz de extraer conocimiento implícito y complejo, potencialmente útil (descubrimiento de patrones, desviaciones, anomalías, valores anómalos, situaciones interesantes, tendencias), a partir de grandes conjuntos de datos. Utiliza los métodos de la inteligencia artificial, aprendizaje de máquina, estadística y sistemas de bases de datos para la toma de decisiones de alta dirección, fundadas en los datos y modelos matemáticos sobre comportamientos probables, deseables e indeseables, participando en dinámicas de trabajo colaborativo e interdisciplinario con sentido ético y responsabilidad social.",
-    atributos: "",
+    requisitosIngreso: "Los estudiantes que ingresen al Instituto Politécnico Nacional, en cualquiera de sus programas y niveles, deberán contar con los conocimientos y las habilidades básicas que garanticen un adecuado desempeño en el nivel al que solicitan su ingreso. Asimismo, deberán contar con las actitudes y valores necesarios para responsabilizarse de su proceso formativo y asumir una posición activa frente al estudio y al desarrollo de los proyectos y trabajos requeridos, coincidentes con el ideario y principios del IPN.",
+    becas: "El IPN ofrece diversas becas para apoyar a los estudiantes en su formación académica.",
+    obtencionGrado: "Para obtener el grado de Licenciado en Ciencia de Datos, el estudiante deberá cumplir con los requisitos establecidos por el IPN.",
     campoLaboral: "Este profesional podrá desempeñarse en los ámbitos público y privado en campos ocupacionales como los que se enlistan a continuación:", 
   ),
 ];
