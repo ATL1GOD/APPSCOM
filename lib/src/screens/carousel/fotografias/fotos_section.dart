@@ -6,52 +6,52 @@ class FotosSection extends StatelessWidget {
   // Hacemos que la lista de fotos sea constante
   static const List<Map<String, String>> photos = [
     {
-      'imageUrl': 'assets/png/fotografias/escuela1.png',
+      'imagenAsset': 'assets/png/fotografias/escuela1.png',
       'title': 'Foto 1',
       'author': 'Atl Cardoso',
     },
     {
-      'imageUrl': 'assets/png/fotografias/escuela9.png',
+      'imagenAsset': 'assets/png/fotografias/escuela9.png',
       'title': 'Foto 2',
       'author': 'Kelly Guzman',
     },
     {
-      'imageUrl': 'assets/png/fotografias/escuela10.png',
+      'imagenAsset': 'assets/png/fotografias/escuela10.png',
       'title': 'Foto 3',
       'author': 'Jorge Hernandez',
     },
     {
-      'imageUrl': 'assets/png/fotografias/escuela11.png',
+      'imagenAsset': 'assets/png/fotografias/escuela11.png',
       'title': 'Foto 4',
       'author': 'Yosafat Osorio',
     },
     {
-      'imageUrl': 'assets/png/fotografias/escuela18.png',
+      'imagenAsset': 'assets/png/fotografias/escuela18.png',
       'title': 'Foto 5',
       'author': 'Marian Mares',
     },
     {
-      'imageUrl': 'assets/png/fotografias/escuela13.png',
+      'imagenAsset': 'assets/png/fotografias/escuela13.png',
       'title': 'Foto 6',
       'author': 'Daniel Vazquez',
     },
     {
-      'imageUrl': 'assets/png/fotografias/escuela12.png',
+      'imagenAsset': 'assets/png/fotografias/escuela12.png',
       'title': 'Foto 7',
       'author': 'Maximiliano Guzman',
     },
     {
-      'imageUrl': 'assets/png/fotografias/escuela15.png',
+      'imagenAsset': 'assets/png/fotografias/escuela15.png',
       'title': 'Foto 8',
       'author': 'Camerina Santiago',
     },
     {
-      'imageUrl': 'assets/png/fotografias/escuela16.png',
+      'imagenAsset': 'assets/png/fotografias/escuela16.png',
       'title': 'Foto 9',
       'author': 'Luisa Luna',
     },
     {
-      'imageUrl': 'assets/png/fotografias/escuela17.png',
+      'imagenAsset': 'assets/png/fotografias/escuela17.png',
       'title': 'Foto 10',
       'author': 'Ana Noriega',
     },
@@ -95,8 +95,8 @@ class FotosSection extends StatelessWidget {
             itemBuilder: (context, index) {
               final photo = photos[index];
               return GestureDetector(
-                onTap: () {
-                   _openFullScreenImage(context, photo['imageUrl']!);// Acción al hacer tap en una foto
+                onTap: () {                  
+                  _openFullScreenImage(context, photo['imagenAsset']!);// Acción al hacer tap en una foto
                 },
                 child: Card(
                   elevation: 4,
@@ -109,7 +109,7 @@ class FotosSection extends StatelessWidget {
                       // Imagen
                       Expanded(
                         child: Image.asset(
-                          photo['imageUrl']!,
+                          photo['imagenAsset']!,
                           fit: BoxFit.cover,
                           width: double.infinity,
                         ),
@@ -150,18 +150,43 @@ class FotosSection extends StatelessWidget {
   }
 
 
-   void _openFullScreenImage(BuildContext context, String imageUrl) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return Dialog(
+    /*void _openFullScreenImage(BuildContext context, String imagenAsset) {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return Dialog(
+            backgroundColor: Colors.transparent,
+            child: InteractiveViewer(
+              child: Center(
+                child: Image.asset(imagenAsset),  // Mostrar la imagen con zoom
+              ),
+            ),
+          );
+        },
+      );
+    }*/
+    void _openFullScreenImage(BuildContext context, String imagenAsset) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return GestureDetector(
+        onTap: () {
+          Navigator.of(context).pop(); // Cerrar el diálogo si se toca fuera de la imagen
+        },
+        child: Dialog(
           backgroundColor: Colors.transparent,
-          child: Center(
-            child: Image.network(imageUrl),  // Mostrar la imagen en pantalla completa
+          child: InteractiveViewer(
+            child: Center(
+              child: GestureDetector(
+                onTap: () {}, // Evita que el toque en la imagen cierre el diálogo
+                child: Image.asset(imagenAsset),
+              ),
+            ),
           ),
-        );
-      },
-    );
-  }
+        ),
+      );
+    },
+  );
+}
 
 }

@@ -24,7 +24,7 @@ class NewsDetailsBody extends StatelessWidget {
             Row(
               children: [
                 CircleAvatar(
-                  backgroundImage: NetworkImage(newsItem.imgPath),
+                  backgroundImage: AssetImage(newsItem.imgAssets),
                 ),
                 const SizedBox(width: 8.0),
                 Text(

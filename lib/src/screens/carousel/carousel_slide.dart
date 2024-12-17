@@ -36,8 +36,8 @@ class _NewsCarouselSliderState extends State<NewsCarouselSlider> {
             borderRadius: const BorderRadius.all(Radius.circular(24.0)),
             child: Stack(
               children: <Widget>[
-                Image.network(
-                  item.imgPath,
+                Image.asset(
+                  item.imgAssets,
                   fit: BoxFit.cover,
                   width: 1000.0,
                 ),

@@ -31,8 +31,8 @@ class _NewsDetailsAppBarState extends State<NewsDetailsAppBar> {
         background: Stack(
           children: [
             Positioned.fill(
-              child: Image.network(
-                news[widget.index].imgPath,
+              child: Image.asset(
+                news[widget.index].imgAssets,
                 fit: BoxFit.cover,
               ),
             ),
