@@ -51,11 +51,11 @@ class OfertaMaestria extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 8),
-          SvgPicture.asset(
-            maestria.iconSrc,
-            width: 40,  // Establece el ancho del ícono
-            height: 40, 
-           ), // Establece la altura del ícono)
+          Icon(
+            maestria.icon,
+            size: 40,  // Establece el tamaño del ícono
+            color: const Color.fromARGB(255, 0, 0, 0),
+          ),
         ],
       ),
       ),

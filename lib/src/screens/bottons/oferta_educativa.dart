@@ -51,11 +51,11 @@ class OfertaEducativa extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 8),
-          SvgPicture.asset(
-            carrera.iconSrc,
-            width: 40,  // Establece el ancho del ícono
-            height: 40, 
-           ), // Establece la altura del ícono)
+          Icon(
+            carrera.icon,
+            size: 40,  // Establece el tamaño del ícono
+            color: const Color.fromARGB(255, 0, 0, 0),
+          ),
         ],
       ),
       ),

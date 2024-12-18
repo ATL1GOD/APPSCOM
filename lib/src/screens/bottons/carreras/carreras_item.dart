@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:appscom/src/screens/bottons/carreras/iia_screen.dart';
 import 'package:appscom/src/screens/bottons/carreras/isc_screen.dart';
@@ -6,7 +7,8 @@ import 'package:appscom/src/screens/bottons/carreras/isa_screen.dart';
 
 //nokmbres de las carreras
 class Carrera {
-  final String title, description, iconSrc;
+  final String title, description;
+  final IconData icon;
   final Color bgColor;
   final Color textColor;
   final String carrera;
@@ -17,7 +19,7 @@ class Carrera {
   Carrera({
     required this.title,
     this.description = '',
-    this.iconSrc = "",
+    required this.icon,
     this.bgColor = const Color.fromARGB(255, 71, 138, 231),
     this.textColor = const Color.fromARGB(255, 0, 0, 0),
     this.imgenpath = "",
@@ -113,28 +115,28 @@ final List<CarreraItem> principalesCarreraItems= [
   Carrera(
     title: "Ingeniería en Sistemas Computacionales",  
     carrera: "ISC",
-    iconSrc: "assets/icons/isc.svg",
+    icon: Icons.laptop_windows_outlined,
     imgenpath: "assets/png/carreras/carrera1.png",
     destinationScreen: IngSistemas(carreraItem: principalesCarreraItems[0]), 
   ),
   Carrera(
     title: "Ingeniería en Inteligencia Artificial",  
     carrera: "IIA",
-    iconSrc: "assets/icons/ia.svg",
+    icon: Icons.precision_manufacturing_sharp,
     imgenpath: "assets/png/carreras/carrera4.png",
     destinationScreen: IngArtificial(carreraItem: principalesCarreraItems[1]), 
   ),
   Carrera(
     title: "Licenciatura en Ciencia de Datos",
     carrera: "LCD",
-    iconSrc: "assets/icons/lcd.svg",
+    icon: Icons.psychology_rounded,
     imgenpath: "assets/png/carreras/carrera9.png",
     destinationScreen: LicDatos(carreraItem: principalesCarreraItems[2],), 
   ),
   Carrera(
     title: "Ingeniería en Sistemas Automotrices",
     carrera: "ISA",
-    iconSrc: "assets/icons/lcd.svg",
+    icon: Icons.directions_car,
     imgenpath: "assets/png/Maestriass/Maestrias9.png",
     destinationScreen: IngAutomotriz(carreraItem: principalesCarreraItems[3],), 
   ),

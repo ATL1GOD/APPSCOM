@@ -1,26 +1,27 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:appscom/src/screens/bottons/maestrias/mcscm_screen.dart';
 import 'package:appscom/src/screens/bottons/maestrias/mctiad_screen.dart';
 
 
 //nokmbres de las Maestriass
 class Maestrias {
-  final String title, description, iconSrc;
+  final String title, description;
+  final IconData icon;
   final Color bgColor;
   final Color textColor;
-  final String maestrias;
-  final String imgenpath;
+  final String maestria;
+  final String imagenasset;
   final Widget destinationScreen;
   
 
   Maestrias({
     required this.title,
     this.description = '',
-    this.iconSrc = "",
+    required this.icon,
     this.bgColor = const Color.fromARGB(255, 71, 138, 231),
     this.textColor = const Color.fromARGB(255, 0, 0, 0),
-    this.imgenpath = "",
-    this.maestrias = "",
+    this.imagenasset = "",
+    this.maestria = "",
     required this.destinationScreen,
   });
 }
@@ -71,20 +72,20 @@ final List<MaestriasItem> principalesMaestriasItems= [
   MaestriasItem(
     id: 0,
     title: "Maestría en Ciencias en Sistemas Computacionales Móviles",  
-    objectivo:"Formar maestros en ciencias con una orientación científica altamente calificados y competitivos a nivel nacional e internacional, con la capacidad de contribuir y realizar investigación en las ciencias computacionales móviles. Innovar, implementar y aplicar la computación móvil para atender adecuadamente las necesidades de los sectores productivo y social del país.",
-    requisitosIngreso: "Los estudiantes que ingresen al Instituto Politécnico Nacional, en cualquiera de sus programas y niveles, deberán contar con los conocimientos y las habilidades básicas que garanticen un adecuado desempeño en el nivel al que solicitan su ingreso. Asimismo, deberán contar con las actitudes y valores necesarios para responsabilizarse de su proceso formativo y asumir una posición activa frente al estudio y al desarrollo de los proyectos y trabajos requeridos, coincidentes con el ideario y principios del IPN.",
-    becas: "El IPN ofrece diversas becas para apoyar a los estudiantes en su formación académica.",
-    obtencionGrado: "Para obtener el grado de Maestro en Ciencias en Sistemas Computacionales Móviles, el estudiante deberá cumplir con los requisitos establecidos por el IPN.",
+    objectivo:"Formar maestros en ciencias con una orientación científica altamente calificados y competitivos a nivel nacional e internacional, con la capacidad de contribuir y realizar investigación en las ciencias computacionales móviles.\n Innovar, implementar y aplicar la computación móvil para atender adecuadamente las necesidades de los sectores productivo y social del país.",
+    requisitosIngreso: "1. Poseer título profesional o certificado oficial de terminación de estudios en el área de Ingeniería en Sistemas Computacionales, Telecomunicaciones, Electrónica o Matemáticas.\n 2. Aprobar el proceso de admisión de conformidad a lo establecido en el Reglamento de Estudios de Posgrado y lo acordado en el H. Colegio de Profesores de la SEPI-ESCOM.\n 3. No haber causado baja en algún posgrado del IPN, salvo que haya sido revocada por el Colegio Académico de Posgrado.\n 4. Es importante mencionar que, para el trámite de obtención de grado deberá presentar evidencia del dominio del idioma nivel B1 en mínimo dos habilidades.\nPara mayor información de los trámites para extranjeros, podrán consultar la siguiente liga: https://tinyurl.com/r9taajza",
+    becas: "Los alumnos aceptados podrán aplicar a la convocatoria y participar para una Beca Institucional o Beca CONAHCYT.\n El IPN, o en su caso el CONAHCYT otorgará a los alumnos inscritos en el programa, una beca mensual siempre y cuando reúnan los requisitos establecidos; el número de becas estará sujeto al presupuesto federal otorgado al CONAHCYT yal IPN",
+    obtencionGrado: "Para obtener el grado de Maestría, el alumno deberá cumplir con los requisitos establecidos en el Artículo 48 del Reglamento de Estudios de Posgrado del IPN vigente.\n a) Estar inscrito en el programa de maestría correspondiente;\n b) Cumplir su programa individual de actividades definitivo;\n c) Haber desarrollado una tesis de maestría con las características señaladas en el reglamento, y\n d) Aprobar el examen de grado",
     campoLaboral: "Este profesional podrá desempeñarse en el desarrollo y aplicación de la Inteligencia Artificial, en los ámbitos público y privado, en campos ocupacionales como los que se enlistan a continuación:", 
   ),
   MaestriasItem(
     id: 1,
-    title: "Licenciatura en Ciencia de Datos",
-    objectivo:"Formar expertos capaces de extraer conocimiento implícito y complejo, potencialmente útil a partir de grandes conjuntos de datos, utilizando métodos de inteligencia artificial, aprendizaje de máquina, estadística, sistemas de bases de datos y modelos matemáticos sobre comportamientos probables, para apoyar la toma de decisiones de alta dirección.",
-    requisitosIngreso: "Los estudiantes que ingresen al Instituto Politécnico Nacional, en cualquiera de sus programas y niveles, deberán contar con los conocimientos y las habilidades básicas que garanticen un adecuado desempeño en el nivel al que solicitan su ingreso. Asimismo, deberán contar con las actitudes y valores necesarios para responsabilizarse de su proceso formativo y asumir una posición activa frente al estudio y al desarrollo de los proyectos y trabajos requeridos, coincidentes con el ideario y principios del IPN.",
-    becas: "El IPN ofrece diversas becas para apoyar a los estudiantes en su formación académica.",
-    obtencionGrado: "Para obtener el grado de Licenciado en Ciencia de Datos, el estudiante deberá cumplir con los requisitos establecidos por el IPN.",
-    campoLaboral: "Este profesional podrá desempeñarse en los ámbitos público y privado en campos ocupacionales como los que se enlistan a continuación:", 
+    title: "Maestría en Ciencia y Tecnología de Inteligencia Artificial y Ciencia de Datos",
+    objectivo:"Formar maestros en ciencias con una orientación científica altamente calificados y competitivos a nivel nacional e internacional, con la capacidad de contribuir y realizar investigación en las ciencias computacionales móviles.\n Innovar, implementar y aplicar la computación móvil para atender adecuadamente las necesidades de los sectores productivo y social del país.",
+    requisitosIngreso: "1. Poseer título profesional o certificado oficial de terminación de estudios en el área de Ingeniería en Sistemas Computacionales, Telecomunicaciones, Electrónica o Matemáticas.\n 2. Aprobar el proceso de admisión de conformidad a lo establecido en el Reglamento de Estudios de Posgrado y lo acordado en el H. Colegio de Profesores de la SEPI-ESCOM.\n 3. No haber causado baja en algún posgrado del IPN, salvo que haya sido revocada por el Colegio Académico de Posgrado.\n 4. Es importante mencionar que, para el trámite de obtención de grado deberá presentar evidencia del dominio del idioma nivel B1 en mínimo dos habilidades.\nPara mayor información de los trámites para extranjeros, podrán consultar la siguiente liga: https://tinyurl.com/r9taajza",
+    becas: "Los alumnos aceptados podrán aplicar a la convocatoria y participar para una Beca Institucional o Beca CONAHCYT.\n El IPN, o en su caso el CONAHCYT otorgará a los alumnos inscritos en el programa, una beca mensual siempre y cuando reúnan los requisitos establecidos; el número de becas estará sujeto al presupuesto federal otorgado al CONAHCYT yal IPN",
+    obtencionGrado: "Para obtener el grado de Maestría, el alumno deberá cumplir con los requisitos establecidos en el Artículo 48 del Reglamento de Estudios de Posgrado del IPN vigente.\n a) Estar inscrito en el programa de maestría correspondiente;\n b) Cumplir su programa individual de actividades definitivo;\n c) Haber desarrollado una tesis de maestría con las características señaladas en el reglamento, y\n d) Aprobar el examen de grado",
+    campoLaboral: "Este profesional podrá desempeñarse en el desarrollo y aplicación de la Inteligencia Artificial, en los ámbitos público y privado, en campos ocupacionales como los que se enlistan a continuación:", 
   ),
 ];
 
@@ -94,16 +95,16 @@ final List<MaestriasItem> principalesMaestriasItems= [
   final List<Maestrias> principalesMaestrias = [
     Maestrias(
     title: "Maestría en Ciencias en Sistemas Computacionales Móviles",
-    maestrias: "MCSCM",
-    iconSrc: "assets/icons/lcd.svg",
-    imgenpath: "assets/png/Maestriass/Maestrias9.png",
+    maestria: "MCSCM",
+    icon: Icons.developer_mode,
+    imagenasset: "assets/png/carreras/carrera13.png",
     destinationScreen: MaestriaSistemas(maestriaItem: principalesMaestriasItems[0],), 
   ),
   Maestrias(
     title: "Maestría en Ciencia y Tecnología de Inteligencia Artificial y Ciencia de Datos",
-    maestrias: "MCTIACD",
-    iconSrc: "assets/icons/lcd.svg",
-    imgenpath: "assets/png/Maestriass/Maestrias9.png",
+    maestria: "MCTIACD",
+    icon: Icons.data_object,
+    imagenasset: "assets/png/carreras/carrera12.png",
     destinationScreen: MaestriaInteligencia(maestriaItem: principalesMaestriasItems[1],), 
   ),
 ];

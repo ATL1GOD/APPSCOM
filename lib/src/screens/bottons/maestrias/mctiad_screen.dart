@@ -1,6 +1,6 @@
+import 'package:appscom/src/screens/bottons/maestrias/maestria_appbar.dart';
 import 'package:flutter/material.dart';
 import 'maestria_item.dart';
-import '../carreras/carrera_appbar.dart';
 
 class MaestriaSistemas extends StatelessWidget {
   final MaestriasItem maestriaItem;
@@ -12,7 +12,7 @@ class MaestriaSistemas extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
-          CarreraAppBar(index: 0), 
+          MaestriaAppbar(index: 1), 
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.all(35.0),
