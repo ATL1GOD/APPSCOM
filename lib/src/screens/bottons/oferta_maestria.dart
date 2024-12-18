@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:appscom/src/screens/bottons/maestrias/maestria_item.dart';
 
 class OfertaMaestria extends StatefulWidget {

@@ -32,7 +32,7 @@ List<RiveAsset> sideMenus = [
 List<RiveAsset> sideMenu2 = [
   RiveAsset(
     title: "Perfil",
-    routeName: "/perfil",
+    routeName: "/bienvenida",
     icon: Icons.account_circle, // Icono estático de Flutter
   ),
   RiveAsset(
