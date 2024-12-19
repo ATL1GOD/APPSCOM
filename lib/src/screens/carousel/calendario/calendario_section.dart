@@ -1,3 +1,4 @@
+import 'package:appscom/src/screens/carousel/calendario/imagen_completa.dart';
 import 'package:flutter/material.dart';
 import 'pantalla_pdf.dart'; // Asegúrate de importar el archivo PDFViewerPage
 
@@ -17,17 +18,17 @@ class CalendarioSection extends StatelessWidget {
 
         // Primer Calendario Escolarizado
         GestureDetector(
-          onTap: () {/*
+          onTap: () {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => FullScreenCalendario(
-                  imageUrl: 'assets/png/calendarios/calendario_escolarizado.png',
+                builder: (context) => ImagenCompleta(
+                  imagenAssets: 'assets/png/calendarios/calendario_escolarizado.png',
                 ),
               ),
-            );*/
+            );
           },
-          child: ClipRRect(
+          child: ClipRRect( // ClipRRect lo usamos para que pueda recortar los bordes de un widget hijo
             borderRadius: BorderRadius.circular(8.0),
             child: Image.asset(
               'assets/png/calendarios/calendario_escolarizado.png',
@@ -74,15 +75,15 @@ class CalendarioSection extends StatelessWidget {
 
         // Segundo Calendario No Escolarizado
         GestureDetector(
-          onTap: () {/*
+          onTap: () {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => FullScreenCalendario(
-                  imageUrl: 'assets/png/calendarios/calendario_noescolarizado.png',
+                builder: (context) => ImagenCompleta(
+                  imagenAssets: 'assets/png/calendarios/calendario_noescolarizado.png',
                 ),
               ),
-            );*/
+            );
           },
           child: ClipRRect(
             borderRadius: BorderRadius.circular(8.0),
