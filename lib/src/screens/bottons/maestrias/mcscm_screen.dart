@@ -1,12 +1,12 @@
+import 'package:appscom/src/screens/bottons/maestrias/maestria_appbar.dart';
 import 'package:flutter/material.dart';
 import 'maestria_item.dart';
-import 'maestria_appbar.dart';
 import 'package:appscom/src/screens/home/imagen_completa.dart';
 
-class MaestriaInteligencia extends StatelessWidget {
+class MaestriaSistemas extends StatelessWidget {
   final MaestriasItem maestriaItem;
 
-  const MaestriaInteligencia({super.key, required this.maestriaItem});
+  const MaestriaSistemas({super.key, required this.maestriaItem});
 
   @override
   Widget build(BuildContext context) {
@@ -268,7 +268,7 @@ class MaestriaInteligencia extends StatelessWidget {
                        child: Image.asset(
                          'assets/png/plan/maestria1.png',
                          fit: BoxFit.cover,
-                         height: 500.0,
+                         height: 240.0,
                          width: double.infinity,
                        ),
                      ),
