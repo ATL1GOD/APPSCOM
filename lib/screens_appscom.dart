@@ -1,0 +1,12 @@
+export 'package:appscom/src/screens/equipo_desarrollo/equipo_screen.dart';
+export 'package:appscom/src/screens/historia/historia_screen.dart';
+export 'package:appscom/src/screens/home/home_page.dart';
+export 'package:appscom/src/screens/menu_restrigido/menu_acceso.dart';
+export 'package:appscom/src/screens/profesores/profesores_lista.dart';
+export 'package:appscom/src/utils/provider/onboarding_provider.dart';
+export 'package:appscom/src/utils/preferences.dart';
+export 'package:appscom/src/res/colors.dart';
+export 'package:appscom/src/screens/onboarding/screens_onboarding.dart';
+export 'package:appscom/src/screens/login/bienvenida_screen.dart';
+export 'package:appscom/src/screens/perfil/perfil_detalles.dart';
+export 'package:appscom/src/screens/maps/mapa_screen.dart';

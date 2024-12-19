@@ -1,25 +1,20 @@
-import 'package:appscom/src/screens/equipo_desarrollo/equipo_screen.dart';
-import 'package:appscom/src/screens/historia/historia_screen.dart';
-import 'package:appscom/src/screens/home/home_page.dart';
-import 'package:appscom/src/screens/menu_restrigido/menu_acceso.dart';
-import 'package:appscom/src/screens/profesores/profesores_lista.dart';
-import 'package:appscom/src/utils/provider/onboarding_provider.dart';
-import 'package:appscom/src/utils/preferences.dart';
-import 'package:device_preview/device_preview.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-//import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:appscom/src/res/colors.dart';
-import 'package:appscom/src/screens/onboarding/screens_onboarding.dart';
-import 'package:sizer/sizer.dart';
-import 'package:appscom/src/screens/login/bienvenida_screen.dart';
-import 'package:appscom/src/screens/perfil/perfil_detalles.dart';
-import 'package:appscom/src/screens/maps/mapa_screen.dart';
+/*// Importación de la librería DevicePreview para pruebas en diferentes dispositivos
+import 'package:device_preview/device_preview.dart'; 
+// Importación para el modo release de la aplicación
+import 'package:flutter/foundation.dart'; */
+
+
+// Importacion para el uso de material design en la aplicación
+import 'package:flutter/material.dart'; 
+// importación de la librería sizer para el diseño responsivo
+import 'package:sizer/sizer.dart'; 
 //importacion de las opciones de firebase
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
-import 'package:provider/provider.dart';
-
+//importacion de las preferencias y el provider
+import 'package:provider/provider.dart'; 
+// Importación de las rutas de todas las pantallas de la aplicación
+import 'package:appscom/screens_appscom.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -29,10 +24,13 @@ void main() async{
     final preferences= Preferences();
     await preferences.initialize();
   runApp(
+    /*
     DevicePreview(
       enabled: !kReleaseMode, // Habilita DevicePreview en modo debug
       builder: (context) => const App(), // Llama al widget principal
     ),
+    */
+    const App(),
   );
 }
 
@@ -52,9 +50,11 @@ class App extends StatelessWidget {
           ],
          child: MaterialApp(
           // ignore: deprecated_member_use
+          /*
           useInheritedMediaQuery: true, // Necesario para DevicePreview
           locale: DevicePreview.locale(context), // Soporte de idiomas
           builder: DevicePreview.appBuilder, // Builder de DevicePreview
+          */
           debugShowCheckedModeBanner: false,
           title: "APPSCOM",
           themeMode: ThemeMode.light,
