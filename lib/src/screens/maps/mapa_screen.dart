@@ -43,12 +43,10 @@ class _MapScreenState extends State<MapScreen> {
               ),
             ),
           ),
-          toolbarHeight: 60, //
-          title: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const Text(
+          toolbarHeight: 90, //
+          centerTitle: true,
+          title: Center(
+            child: Text(
                 'Mapa ESCOM',
                 style: TextStyle(
                   fontSize: 25,
@@ -56,8 +54,6 @@ class _MapScreenState extends State<MapScreen> {
                   color: Colors.white,
                 ),
               ),
-              const SizedBox(height: 3),
-            ],
           ),
         ),
       body: Stack(

@@ -37,12 +37,10 @@ class _EquipoScreenState extends State<EquipoScreen> {
               ),
             ),
           ),
-          toolbarHeight: 60, //
-          title: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const Text(
+          toolbarHeight: 90, //
+          centerTitle: true,
+          title: Center(
+            child: Text(
                 'Creditos',
                 style: TextStyle(
                   fontSize: 25,
@@ -50,8 +48,6 @@ class _EquipoScreenState extends State<EquipoScreen> {
                   color: Colors.white,
                 ),
               ),
-              const SizedBox(height: 3),
-            ],
           ),
         ),
       body: ListView.builder(

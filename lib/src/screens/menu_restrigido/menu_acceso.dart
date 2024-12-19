@@ -1,7 +1,7 @@
 import 'package:appscom/src/screens/login/bienvenida_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:appscom/src/screens/bottons/carreras/carrera_icon.dart';
+//import 'package:appscom/src/screens/bottons/carreras/carrera_icon.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:appscom/src/screens/perfil/perfil_detalles.dart';
 import 'package:appscom/src/screens/profesores/profesores_lista.dart'; 
@@ -256,8 +256,10 @@ class _AccesoAppBarState extends State<AccesoAppBar> {
     final size = MediaQuery.of(context).size;
 
     return SliverAppBar(
-      expandedHeight: size.height * 0.4, //
-      leading: Padding(
+
+      expandedHeight: size.height * 0.4, 
+      automaticallyImplyLeading: false, // Oculta el botón de regreso
+      /*leading: Padding(
         padding: const EdgeInsets.only(left: 8.0),
         child: AppBarIcon(
           icon: Icons.arrow_back_ios_new,
@@ -266,7 +268,7 @@ class _AccesoAppBarState extends State<AccesoAppBar> {
         ),
       ),
       leadingWidth: 50,
-      iconTheme: const IconThemeData(color: Colors.white),
+      iconTheme: const IconThemeData(color: Colors.white),*/
       flexibleSpace: FlexibleSpaceBar(
         background: Stack(
           children: [

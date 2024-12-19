@@ -15,7 +15,7 @@ class ContactDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+        appBar: AppBar(
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(
               bottom: Radius.circular(20),
@@ -33,9 +33,9 @@ class ContactDetailScreen extends StatelessWidget {
               ),
             ),
           ),
-          toolbarHeight: 60, 
+          toolbarHeight: 90, 
           leading: Padding(
-                  padding: const EdgeInsets.only(left: 10), // Margen izquierdo
+                  padding: const EdgeInsets.only(left: 15), // Margen izquierdo
                   child: GestureDetector(
                     onTap: () {
                       Navigator.pop(context); // Acción al presionar
@@ -54,21 +54,17 @@ class ContactDetailScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                ),
-          title: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
+                ), //
+          centerTitle: true,
+          title: Center(
+          child: Text(
                 contact.nombre,
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 25,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),
               ),
-              const SizedBox(height: 3),
-            ],
           ),
         ),
       body: Padding(

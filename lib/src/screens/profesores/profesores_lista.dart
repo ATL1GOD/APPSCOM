@@ -65,7 +65,7 @@ class ContactListPageState extends State<ContactListPage> {
               ),
             ),
           ),
-          toolbarHeight: 60, 
+          toolbarHeight: 90, 
           leading: Padding(
                   padding: const EdgeInsets.only(left: 10), // Margen izquierdo
                   child: GestureDetector(
@@ -86,12 +86,10 @@ class ContactListPageState extends State<ContactListPage> {
                       ),
                     ),
                   ),
-                ),
-          title: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const Text(
+                ), //
+          centerTitle: true,
+          title: Center(
+            child: Text(
                 'Profesores',
                 style: TextStyle(
                   fontSize: 25,
@@ -99,12 +97,10 @@ class ContactListPageState extends State<ContactListPage> {
                   color: Colors.white,
                 ),
               ),
-              const SizedBox(height: 3),
-            ],
           ),
           actions: [ //
               Padding(
-                padding: const EdgeInsets.only(right: 10), 
+                padding: const EdgeInsets.only(right: 25), 
                 child: GestureDetector(
                   onTap: () {
                     Navigator.push(

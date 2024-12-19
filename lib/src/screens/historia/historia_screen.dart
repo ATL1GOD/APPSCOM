@@ -34,12 +34,10 @@ class HistoriaScreenState extends State<HistoriaScreen> {
               ),
             ),
           ),
-          toolbarHeight: 60, //
-          title: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const Text(
+          toolbarHeight: 90, //
+          centerTitle: true,
+          title: Center(
+            child: Text(
                 'Historia & Escudo',
                 style: TextStyle(
                   fontSize: 25,
@@ -47,8 +45,6 @@ class HistoriaScreenState extends State<HistoriaScreen> {
                   color: Colors.white,
                 ),
               ),
-              const SizedBox(height: 3),
-            ],
           ),
         ),
         body: CustomScrollView(
