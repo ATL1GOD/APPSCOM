@@ -1,6 +1,6 @@
 import 'package:appscom/src/screens/carousel/calendario/imagen_completa.dart';
 import 'package:flutter/material.dart';
-import 'pantalla_pdf.dart'; // Asegúrate de importar el archivo PDFViewerPage
+import 'pdf_completo.dart'; // Asegúrate de importar el archivo PDFViewerPage
 
 class CalendarioSection extends StatelessWidget {
   const CalendarioSection({super.key});
@@ -46,8 +46,8 @@ class CalendarioSection extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => PDFViewerPage(
-                  pdfUrl: 'assets/pdf/calendario-escolarizado.pdf',
+                builder: (context) => PDFScreen(
+                  pdfAsset: 'assets/pdf/calendario_escolarizado.pdf',
                 ),
               ),
             );
@@ -55,7 +55,14 @@ class CalendarioSection extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.all(16.0),
             decoration: BoxDecoration(
-              color: Colors.blueAccent,
+              gradient: const LinearGradient(
+                colors: [
+                  Color.fromARGB(255, 77, 155, 219), // Color de inicio
+                  Color.fromARGB(255, 8, 51, 145),  // Color de fin
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
               borderRadius: BorderRadius.circular(8.0),
             ),
             child: Row(
@@ -103,8 +110,8 @@ class CalendarioSection extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => PDFViewerPage(
-                  pdfUrl: 'assets/pdf/calendario-noescolarizado.pdf',
+                builder: (context) => PDFScreen(
+                  pdfAsset: 'assets/pdf/calendario_noescolarizado.pdf',
                 ),
               ),
             );
@@ -112,7 +119,14 @@ class CalendarioSection extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.all(16.0),
             decoration: BoxDecoration(
-              color: Colors.blueAccent,
+              gradient: const LinearGradient(
+                colors: [
+                  Color.fromARGB(255, 77, 155, 219), // Color de inicio
+                  Color.fromARGB(255, 8, 51, 145),  // Color de fin
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
               borderRadius: BorderRadius.circular(8.0),
             ),
             child: Row(
