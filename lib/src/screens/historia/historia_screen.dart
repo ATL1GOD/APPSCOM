@@ -106,7 +106,28 @@ class HistoriaScreenState extends State<HistoriaScreen> {
                     ),
                     const SizedBox(height: 25.0),
 
-                    
+                    GestureDetector(
+                      onTap: () {
+                        // Ampliar imagen
+                        showDialog(
+                          context: context,
+                          builder: (context) => Dialog(
+                            child: InteractiveViewer(
+                              child: Image.asset("assets/png/escudo.png"),
+                            ),
+                          ),
+                        );
+                      },
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(8.0), 
+                        child: Image.asset(
+                          'assets/png/escudo.png',
+                          width: 300,
+                          height: 300,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
                     
                     const SizedBox(height: 25.0),
 
