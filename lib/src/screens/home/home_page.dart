@@ -21,16 +21,18 @@ class HomePage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 40),
-              Padding(
+              const SizedBox(height: 65),
+              Center(
+              child: Padding(
                 padding: const EdgeInsets.all(25),
                 child: Text(
                   " ESCOM",
                   style: Theme.of(context).textTheme.headlineMedium!.copyWith(
                       color: const Color.fromARGB(255, 3, 102, 184), fontWeight: FontWeight.w800),
+                      textAlign: TextAlign.center,
                 ),
               ),
-              
+              ),
               const NewsCarouselSlider(),
               
               const SizedBox(height: 15),

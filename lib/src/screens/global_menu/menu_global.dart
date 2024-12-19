@@ -58,15 +58,16 @@ class _MenuGlobalState extends State<MenuGlobal> with SingleTickerProviderStateM
     return Scaffold(
       backgroundColor: backgroundColor2,
       resizeToAvoidBottomInset: false,
-      extendBody: true,
+      extendBody: true, // Para que el fondo llegue hasta el final de la pantalla
       body: Stack(
         children: [
+          const SizedBox(height: 25),
           // SideMenu (Drawer) animado
           AnimatedPositioned(
             duration: const Duration(milliseconds: 200),
             curve: Curves.fastOutSlowIn,
             width: 288,
-            left: isSideMenuClosed ? -288 : 0,
+            left: isSideMenuClosed ? -288 : 15,
             height: MediaQuery.of(context).size.height,
             child: SideMenu(selectedIndex: selectedIndex), // Pasamos el índice de la sección activa
           ),
@@ -88,13 +89,13 @@ class _MenuGlobalState extends State<MenuGlobal> with SingleTickerProviderStateM
               ),
             ),
           ),
-          
+          const SizedBox(height: 25),
           // Botón del menú
           AnimatedPositioned(
             duration: const Duration(milliseconds: 200),
             curve: Curves.fastOutSlowIn,
-            left: isSideMenuClosed ? 0 : 220,
-            top: 16,
+            left: isSideMenuClosed ? 15 : 220,
+            top: 41,
             child: MenuBtn(
               riveOnInit: (artboard) {
                 StateMachineController controller = RiveUtils.getRiveController(
