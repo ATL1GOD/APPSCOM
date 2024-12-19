@@ -1,5 +1,5 @@
 import 'package:appscom/src/screens/home/home_page.dart';
-import 'package:appscom/src/screens/provider/onboarding_provider.dart';
+import 'package:appscom/src/utils/provider/onboarding_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:appscom/src/screens/onboarding/screens_onboarding.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';

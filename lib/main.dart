@@ -2,7 +2,7 @@ import 'package:appscom/src/screens/equipo_desarrollo/equipo_screen.dart';
 import 'package:appscom/src/screens/historia/historia_screen.dart';
 import 'package:appscom/src/screens/home/home_page.dart';
 import 'package:appscom/src/screens/profesores/profesores_lista.dart';
-import 'package:appscom/src/screens/provider/onboarding_provider.dart';
+import 'package:appscom/src/utils/provider/onboarding_provider.dart';
 import 'package:appscom/src/utils/preferences.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
