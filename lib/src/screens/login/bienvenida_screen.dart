@@ -30,7 +30,7 @@ class WelcomeScreen extends StatelessWidget {
                     children: [
                       SizedBox(
                         width: 450,
-                        child: LoginAndSignupBtn(),
+                        child: LoginBtn(),
                       ),
                     ],
                   ),
@@ -62,7 +62,7 @@ class MobileWelcomeScreen extends StatelessWidget {
             Spacer(),
             Expanded(
               flex: 8,
-              child: LoginAndSignupBtn(),
+              child: LoginBtn(),
             ),
             Spacer(),
           ],

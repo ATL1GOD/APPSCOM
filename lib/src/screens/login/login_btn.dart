@@ -5,8 +5,8 @@ import 'constants.dart';
 import 'login_screen.dart';
 
 
-class LoginAndSignupBtn extends StatelessWidget {
-  const LoginAndSignupBtn({
+class LoginBtn extends StatelessWidget {
+  const LoginBtn({
     super.key,
   });
 

@@ -1,6 +1,7 @@
 import 'package:appscom/src/screens/equipo_desarrollo/equipo_screen.dart';
 import 'package:appscom/src/screens/historia/historia_screen.dart';
 import 'package:appscom/src/screens/home/home_page.dart';
+import 'package:appscom/src/screens/menu_restrigido/menu_acceso.dart';
 import 'package:appscom/src/screens/profesores/profesores_lista.dart';
 import 'package:appscom/src/utils/provider/onboarding_provider.dart';
 import 'package:appscom/src/utils/preferences.dart';
@@ -83,7 +84,8 @@ class App extends StatelessWidget {
             HistoriaScreen.routeName                 : (context) => const HistoriaScreen(),
             EquipoScreen.routeName                   : (context) => const EquipoScreen(),
             WelcomeScreen.routeName                  : (context) => const WelcomeScreen(),
-            PerfilUsuario.routename                  : (context) => const PerfilUsuario(nombre: 'Nombre'),
+            MenuAcceso.routename                     : (context) => const MenuAcceso(nombre: 'nombre'),
+            PerfilUsuario.routename                  : (context) => const PerfilUsuario(nombre: 'nombre'),
             ContactListPage.routeName                : (context) => const ContactListPage(),
           },  
           //home: const OnboardingScreen(), // Pantalla de bienvenida directamente

@@ -28,9 +28,7 @@ class PerfilUsuario extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MenuGlobal(
-      selectedIndex: 4, // Add the required selectedIndex parameter
-    child:Scaffold(
+    return Scaffold(
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       body: FutureBuilder<Map<String, dynamic>?>(
         future: _fetchAlumnoData(nombre),
@@ -214,7 +212,6 @@ class PerfilUsuario extends StatelessWidget {
           );
         },
       ),
-      ),
     );
   }
 }
@@ -238,7 +235,7 @@ class _PerfilAppBarState extends State<PerfilAppBar> {
       leading: Padding(
         padding: const EdgeInsets.only(left: 8.0),
         child: AppBarIcon(
-          icon: Icons.chevron_left,
+          icon: Icons.arrow_back_ios_new,
           iconSize: 30,
           onTap: () => Navigator.of(context).pop(),
         ),

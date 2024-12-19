@@ -4,7 +4,6 @@ import 'profesores_detalles_screen.dart';
 import 'profesores_cards.dart';
 import 'perspective_list_view.dart';
 import 'busqueda_profesores.dart';
-import 'package:appscom/src/screens/global_menu/menu_global.dart';
 
 class ContactListPage extends StatefulWidget {
   static const String routeName = '/profesores';
@@ -46,12 +45,9 @@ class ContactListPageState extends State<ContactListPage> {
 
   @override
   Widget build(BuildContext context) {
-    return MenuGlobal(
-      selectedIndex: 4,
-      child: Scaffold(
-        resizeToAvoidBottomInset: false,
+    return  Scaffold(
+        resizeToAvoidBottomInset: false, 
         appBar: AppBar(
-          automaticallyImplyLeading: false,
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(
               bottom: Radius.circular(20),
@@ -69,7 +65,28 @@ class ContactListPageState extends State<ContactListPage> {
               ),
             ),
           ),
-          toolbarHeight: 60, //
+          toolbarHeight: 60, 
+          leading: Padding(
+                  padding: const EdgeInsets.only(left: 10), // Margen izquierdo
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context); // Acción al presionar
+                    },
+                    child: Container(
+                      width: 40,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        color: Colors.white.withOpacity(0.2), // Fondo translúcido
+                        shape: BoxShape.circle, // Forma circular
+                      ),
+                      child: const Icon(
+                        Icons.arrow_back_ios_new, // Ícono personalizado
+                        size: 24,
+                        color: Colors.white, // Color del ícono
+                      ),
+                    ),
+                  ),
+                ),
           title: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -87,7 +104,7 @@ class ContactListPageState extends State<ContactListPage> {
           ),
           actions: [ //
               Padding(
-                padding: const EdgeInsets.only(right: 20, bottom: 2, top: 13 ), 
+                padding: const EdgeInsets.only(right: 10), 
                 child: GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -157,7 +174,6 @@ class ContactListPageState extends State<ContactListPage> {
                       );
                     }),
                   ),
-      ),
     );
   }
 }
