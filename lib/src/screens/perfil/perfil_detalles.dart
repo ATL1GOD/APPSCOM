@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:appscom/src/screens/bottons/carreras/carrera_icon.dart';
-import 'package:appscom/src/screens/global_menu/menu_global.dart';
 
 class PerfilUsuario extends StatelessWidget {
   final String nombre;

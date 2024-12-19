@@ -2,8 +2,6 @@ import 'package:appscom/src/screens/menu_restrigido/menu_acceso.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'constants.dart';
-import 'package:appscom/src/screens/perfil/perfil_detalles.dart';
-import 'package:appscom/src/screens/menu_restrigido/menu_acceso.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
