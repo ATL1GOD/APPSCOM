@@ -1,6 +1,6 @@
-import 'package:appscom/src/screens/carousel/calendario/imagen_completa.dart';
+import 'package:appscom/src/screens/home/imagen_completa.dart';
 import 'package:flutter/material.dart';
-import 'pdf_completo.dart'; // Asegúrate de importar el archivo PDFViewerPage
+import 'package:appscom/src/screens/home/pdf_completo.dart'; 
 
 class CalendarioSection extends StatelessWidget {
   const CalendarioSection({super.key});
