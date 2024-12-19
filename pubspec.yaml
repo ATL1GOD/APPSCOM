@@ -87,7 +87,6 @@ flutter:
   assets:
     - assets/logo/
     - assets/rive/
-    - assets/icons/
     # otras rutas de assets...
     - assets/pdf/
 
@@ -98,63 +97,15 @@ flutter:
     - assets/png/fotografias/
     - assets/png/carreras/
     - assets/png/equipo/
-    - assets/png/m8/
-    - assets/png/m13/
-    - assets/png/m10/
-    - assets/png/m19/
-    - assets/png/m26/
-    - assets/png/m27/
-    - assets/png/m28/
-    - assets/png/m29/
-    - assets/png/m31/
-    - assets/png/m35/
-    - assets/png/m37/
-    - assets/png/m40/
-    - assets/png/m43/
-    - assets/png/m45/
-    - assets/png/m50/
-    - assets/png/m52/
-    - assets/png/m53/
-    - assets/png/m57/
-    - assets/png/m64/
-    - assets/png/m89/
-    - assets/png/m99/
-    - assets/png/m98/
-    - assets/png/m100/
-    - assets/png/m97/
-    - assets/png/m96/
-    - assets/png/m95/
+
 
     # SVGs
     - assets/svg/
     - assets/svg/login/
     - assets/svg/onboarding/
-    - assets/svg/m3/
-    - assets/svg/m4/
-    - assets/svg/m6/
-    - assets/svg/m7/
-    - assets/svg/m8/
-    - assets/svg/m9/
-    - assets/svg/m11/
-    - assets/svg/m12/
-    - assets/svg/m14/
-    - assets/svg/m18/
-    - assets/svg/m19/
-    - assets/svg/m21/
-    - assets/svg/m22/
-    - assets/svg/m32/
-    - assets/png/m45/
-    - assets/svg/m51/
-    - assets/png/m52/
-    - assets/png/m30/
-    - assets/svg/m52/
-    - assets/svg/m53/
-    - assets/svg/m76/
-    - assets/png/m175/
-    - assets/svg/m175/
 
     # Colors
-    - assets/color/
+
 
     # google fonts for testing
     - google_fonts/

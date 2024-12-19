@@ -27,22 +27,17 @@ List<RiveAsset> sideMenus = [
     routeName: "/historia",
     icon: Icons.menu_book, // Icono estático de Flutter
   ),
+    RiveAsset(
+    title: "Equipo de Desarrollo",
+    routeName: "/equipoDesarrollo",
+    icon: Icons.diversity_1, // Icono estático de Flutter
+  ),
 ];
 
 List<RiveAsset> sideMenu2 = [
   RiveAsset(
-    title: "Perfil",
+    title: "Acceso ESCOM",
     routeName: "/bienvenida",
     icon: Icons.account_circle, // Icono estático de Flutter
-  ),
-  RiveAsset(
-    title: "Profesores",
-    routeName: "/profesores",
-    icon: Icons.group, // Icono estático de Flutter
-  ),
-  RiveAsset(
-    title: "Equipo de Desarrollo",
-    routeName: "/equipoDesarrollo",
-    icon: Icons.diversity_1, // Icono estático de Flutter
   ),
 ];
