@@ -1,5 +1,5 @@
-import 'package:appscom/src/screens/home/imagen_completa.dart';
 import 'package:flutter/material.dart';
+import 'package:appscom/src/screens/home/imagen_completa.dart';
 import 'package:appscom/src/screens/home/pdf_completo.dart'; 
 
 class CalendarioSection extends StatelessWidget {

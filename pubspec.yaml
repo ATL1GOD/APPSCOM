@@ -89,6 +89,7 @@ flutter:
     - assets/rive/
     # otras rutas de assets...
     - assets/pdf/
+    - assets/pdf/carreras/
     - assets/fonts/
 
     # PNGs
@@ -98,6 +99,7 @@ flutter:
     - assets/png/fotografias/
     - assets/png/carreras/
     - assets/png/equipo/
+    - assets/png/plan/
 
 
     # SVGs

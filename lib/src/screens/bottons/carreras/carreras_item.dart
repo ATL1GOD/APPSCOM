@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:appscom/src/screens/bottons/carreras/iia_screen.dart';
 import 'package:appscom/src/screens/bottons/carreras/isc_screen.dart';
 import 'package:appscom/src/screens/bottons/carreras/lcd_screen.dart';
@@ -137,7 +136,7 @@ final List<CarreraItem> principalesCarreraItems= [
     title: "Ingeniería en Sistemas Automotrices",
     carrera: "ISA",
     icon: Icons.directions_car,
-    imgenpath: "assets/png/Maestriass/Maestrias9.png",
+    imgenpath: "assets/png/carreras/carrera11.png",
     destinationScreen: IngAutomotriz(carreraItem: principalesCarreraItems[3],), 
   ),
 ];
