@@ -20,8 +20,9 @@ class SideMenu extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const InfoCard(
-                name: "Atl & Kelly ",
-                profession: "Estudiante",
+                instituto: "IPN",
+                escuela: "ESCOM",
+                svgAsset: "assets/svg/logos/institucional.svg",
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 24, top: 32, bottom: 16),
@@ -68,7 +69,6 @@ class SideMenu extends StatelessWidget {
                       // Asegúrate de volver al menú con el índice correcto
                       (context as Element).markNeedsBuild();
                     });
-                    // Puedes agregar aquí una función global para mantener sincronizado el estado
                   },
                   isActive: selectedIndex == sideMenus.length + sideMenu2.indexOf(menu),
                   //isActive: selectedIndex == sideMenus.indexOf(menu), // Comparar el índice seleccionado
