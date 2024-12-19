@@ -4,7 +4,7 @@ import 'background.dart';
 import 'responsive.dart';
 import 'login_btn.dart';
 import 'bienvenida_imagen.dart';
-import 'package:appscom/src/screens/global_menu/custom_drawer.dart';
+import 'package:appscom/src/screens/global_menu/menu_global.dart';
 
 class WelcomeScreen extends StatelessWidget {
   static const String routeName = '/bienvenida';

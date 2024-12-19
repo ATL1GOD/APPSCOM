@@ -1,4 +1,4 @@
-import 'package:appscom/src/screens/global_menu/custom_drawer.dart';
+import 'package:appscom/src/screens/global_menu/menu_global.dart';
 import 'package:flutter/material.dart';
 import 'equipo_item.dart';
 import 'package:url_launcher/url_launcher.dart';

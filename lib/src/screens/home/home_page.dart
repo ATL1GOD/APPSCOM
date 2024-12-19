@@ -4,7 +4,7 @@ import 'package:appscom/src/screens/carousel/carousel_slide.dart';
 import 'package:flutter/material.dart';
 import 'package:appscom/src/screens/bottons/carreras/carreras_item.dart';
 import '../bottons/oferta_educativa.dart';
-import 'package:appscom/src/screens/global_menu/custom_drawer.dart';
+import 'package:appscom/src/screens/global_menu/menu_global.dart';
 
 class HomePage extends StatelessWidget {
   static const routeName = '/inicio';

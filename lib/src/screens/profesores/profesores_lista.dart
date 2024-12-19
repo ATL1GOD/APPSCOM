@@ -4,7 +4,7 @@ import 'profesores_detalles_screen.dart';
 import 'profesores_cards.dart';
 import 'perspective_list_view.dart';
 import 'busqueda_profesores.dart';
-import 'package:appscom/src/screens/global_menu/custom_drawer.dart';
+import 'package:appscom/src/screens/global_menu/menu_global.dart';
 
 class ContactListPage extends StatefulWidget {
   static const String routeName = '/profesores';
