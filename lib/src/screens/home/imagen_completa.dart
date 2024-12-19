@@ -16,7 +16,6 @@ class _ImagenCompletaState extends State<ImagenCompleta> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          automaticallyImplyLeading: false,
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(
               bottom: Radius.circular(20),
@@ -34,9 +33,9 @@ class _ImagenCompletaState extends State<ImagenCompleta> {
               ),
             ),
           ),
-          toolbarHeight: 60, //
+          toolbarHeight: 90, 
           leading: Padding(
-                  padding: const EdgeInsets.only(left: 10), // Margen izquierdo
+                  padding: const EdgeInsets.only(left: 15), // Margen izquierdo
                   child: GestureDetector(
                     onTap: () {
                       Navigator.pop(context); // Acción al presionar
@@ -55,12 +54,9 @@ class _ImagenCompletaState extends State<ImagenCompleta> {
                       ),
                     ),
                   ),
-                ),
-          title: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const Text(
+                ), //
+          centerTitle: true,
+          title: Text(
                 'Imagen Completa',
                 style: TextStyle(
                   fontSize: 25,
@@ -68,10 +64,7 @@ class _ImagenCompletaState extends State<ImagenCompleta> {
                   color: Colors.white,
                 ),
               ),
-              const SizedBox(height: 3),
-            ],
-          ),
-        ),
+            ),
       body: GestureDetector(
         child: InteractiveViewer(
           maxScale: _maxScale,
